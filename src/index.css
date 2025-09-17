@@ -1,0 +1,73 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito:wght@600;800&display=swap');
+
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;   /* Body font */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #213547;
+  background-color: #ffffff;
+
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif; /* Headings font */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  color: #213547;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: #2d9cdb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #1b7dbd;
+}
+
+/* Buttons */
+button, .btn {
+  border-radius: 6px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, opacity 0.25s;
+}
+
+button:hover, .btn:hover {
+  opacity: 0.9;
+}
+
+/* Light/Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #ffffff;
+    background-color: #242424;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+}
