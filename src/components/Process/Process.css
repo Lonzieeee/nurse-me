@@ -1,0 +1,154 @@
+.process {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.process-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #213547;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12%;
+  margin-left: 40%;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.process-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid #2d9cdb;
+  order: 1;
+}
+
+.process-icon img {
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.process-text {
+  flex: 1;
+  text-align: left;
+  order: 2;
+}
+
+.process-text h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #2d9cdb;
+}
+
+.process-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 56ch;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+  .process-steps{
+    margin-top: 50%;
+    margin-left: 50%;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  .process-step {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    width: 350px;
+  
+  
+  }
+  
+  .process-icon {
+    margin-bottom: 12px;
+    order: 1;
+  }
+  
+  .process-text {
+    text-align: center;
+    order: 2;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .process-steps{
+    margin-top: 30%;
+  }
+  .process-step {
+    max-width: 700px;
+    gap: 40px;
+  }
+  
+  .process-icon {
+    width: 96px;
+    height: 96px;
+  }
+  
+  .process-icon img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.process-cta {
+  margin-top: 84px;
+  text-align: center;
+}
+
+.process-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 28px;
+  background: #2d9cdb;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.process-btn:hover {
+  background: #1b7dbd;
+  color: #fff;
+}

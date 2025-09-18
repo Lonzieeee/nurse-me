@@ -1,26 +1,28 @@
-/* Import Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito:wght@600;800&display=swap');
 
-/* Body */
+
 body {
   margin: 0;
-  font-family: 'Lato', sans-serif;   /* Body font */
+  font-family: 'Lato', sans-serif;  
   font-weight: 400;
   line-height: 1.6;
-  color: #213547;
+  color: #000;
   background-color: #ffffff;
 
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Headings */
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Nunito', sans-serif; /* Headings font */
+  font-family: 'Nunito', sans-serif; 
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
-  color: #213547;
+  color: #000000;
+  text-transform: uppercase;
 }
 
 h1 {
@@ -33,7 +35,6 @@ h3 {
   font-size: 1.5rem;
 }
 
-/* Links */
 a {
   font-weight: 500;
   color: #2d9cdb;
@@ -44,23 +45,9 @@ a:hover {
   color: #1b7dbd;
 }
 
-/* Buttons */
-button, .btn {
-  border-radius: 6px;
-  border: none;
-  padding: 0.6em 1.2em;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background-color 0.25s, color 0.25s, opacity 0.25s;
-}
 
-button:hover, .btn:hover {
-  opacity: 0.9;
-}
 
-/* Light/Dark Mode */
+
 @media (prefers-color-scheme: dark) {
   body {
     color: #ffffff;

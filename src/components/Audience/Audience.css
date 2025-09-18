@@ -1,0 +1,238 @@
+.audience-section {
+    padding: 60px 20px;
+    text-align: center;
+    overflow-x: hidden; 
+    background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/audiencebg.png");
+    background-repeat: repeat;
+    background-size: 95px 95px;
+    background-position: 0 0;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .audience-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.01);
+    pointer-events: none;
+  
+    z-index: 0;
+  }
+  
+  .audience-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #2d3748;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px 25px;
+    row-gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .audience-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.8s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  .audience-card.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .audience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .audience-icon {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+   
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    border: 2px solid #2d9cdb;
+  }
+  
+  .audience-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .audience-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #1a202c;
+  }
+  
+  .audience-card p {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+  }
+
+
+  @media (max-width: 1024px) {
+    .audience-section {
+      padding: 50px 15px;
+      min-height: auto;
+    }
+    
+    .audience-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px 20px;
+      row-gap: 50px;
+      max-width: 900px;
+    }
+    
+    .audience-title {
+      font-size: 1.8rem;
+      margin-bottom: 35px;
+    }
+    
+    .audience-card {
+      padding: 20px;
+    }
+    
+    .audience-icon {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .audience-icon img {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .audience-card h3 {
+      font-size: 1.15rem;
+    }
+    
+    .audience-card p {
+      font-size: 0.9rem;
+    }
+  }
+
+ 
+  @media (max-width: 768px) {
+    .audience-section {
+      padding: 40px 15px;
+      background-size: 60px 60px;
+    }
+    
+    .audience-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      row-gap: 25px;
+      max-width: 100%;
+    }
+    
+    .audience-title {
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+    }
+    
+    .audience-card {
+      padding: 20px;
+      border-radius: 15px;
+    }
+    
+    .audience-icon {
+      width: 65px;
+      height: 65px;
+      margin-bottom: 12px;
+    }
+    
+    .audience-icon img {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .audience-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    
+    .audience-card p {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    .audience-section {
+      padding: 30px 12px;
+    }
+    
+    .audience-title {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+    }
+    
+    .audience-card {
+      padding: 18px;
+    }
+    
+    .audience-icon {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .audience-icon img {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .audience-card h3 {
+      font-size: 1.05rem;
+    }
+    
+    .audience-card p {
+      font-size: 0.8rem;
+    }
+  }
+
+  
+  @media (min-width: 1400px) {
+    .audience-grid {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1600px;
+      gap: 30px 30px;
+      row-gap: 70px;
+    }
+    
+    .audience-card {
+      padding: 30px;
+    }
+    
+    .audience-icon {
+      width: 90px;
+      height: 90px;
+    }
+    
+    .audience-icon img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  
