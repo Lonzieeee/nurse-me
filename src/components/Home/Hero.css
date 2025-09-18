@@ -86,13 +86,13 @@
 
 .btn.secondary {
   background: transparent;
-  color:wheat;
+  color: white !important;
   border: 2px solid #27ae60;
 }
 
 .btn.secondary:hover {
   background: #27ae60;
-  color: #000;
+  color: #000 !important;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {

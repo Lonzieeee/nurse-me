@@ -28,21 +28,21 @@ const providers = [
     title: "Physiotherapists", 
     desc: "Rehabilitation and mobility support services.", 
     x: 120, 
-    y: 45 
+    y: 30 
   },
   { 
     icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/nutritionist.png", 
     title: "Nutritionists", 
     desc: "Personalized diet and nutrition care plans.", 
     x: 110, 
-    y: 55 
+    y: 45 
   },
   { 
     icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/midwife.png", 
     title: "Midwives", 
     desc: "Safe maternal care for mothers and newborns.", 
     x: 100, 
-    y: 20 
+    y: 4 
   },
   { 
     icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/Therapist.png", 
@@ -77,24 +77,24 @@ export default function Providers() {
   };
 
   return (
-    <section className="process-section">
-      <h2 className="process-title">Our Service Providers</h2>
-      <p className="process-intro">
+    <section className="providers-section">
+      <h2 className="providers-title">Our Service Providers</h2>
+      <p className="providers-intro">
         Nurse Me partners with trusted healthcare professionals to deliver quality home-based care. Join our team of heroes:
       </p>
 
-      <div className="process-flow">
-        <div className="process-path">
+      <div className="providers-flow">
+        <div className="providers-path">
          
           {!isMobile && (
-            <svg className="process-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+            <svg className="providers-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
               <defs>
                 <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
                   <path d="M0,0 L8,4 L0,8 Z" fill="#64748b" opacity="0.6" />
                 </marker>
               </defs>
               <path
-                className="process-line"
+                className="providers-line"
                 d="M120 120 C 300 120, 520 120, 700 120 S 910 210, 890 300 C 870 410, 630 420, 480 420 H 260 C 170 420, 140 400, 120 360"
                 markerStart=""
                 markerEnd="url(#arrow)"
@@ -106,7 +106,7 @@ export default function Providers() {
             
             return (
               <div
-                className={`process-step ${index === 5 ? "highlight" : ""}`}
+                className={`providers-step ${index === 5 ? "highlight" : ""}`}
                 key={index}
                 style={{
                   left: `${position.x}%`,
@@ -135,7 +135,7 @@ export default function Providers() {
       </div>
       
       <div className="providers-button-container">
-        <a href="/login" className="btn secondary">
+        <a href="/login" className="btn service">
           Join as a Healthcare Provider
         </a>
       </div>
