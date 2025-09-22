@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
-  color: #000000;
+  /* color: #000000; */
   text-transform: uppercase;
 }
 
@@ -48,7 +48,7 @@ a:hover {
 
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     color: #ffffff;
     background-color: #242424;
@@ -57,4 +57,4 @@ a:hover {
   h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
   }
-}
+} */

@@ -148,7 +148,7 @@
 }
 
 .step-label {
-  margin-top: 30px;
+  margin-top: 50px;
   font-size: 1rem;
   font-weight: 600;
   color: #2d3748;
@@ -234,7 +234,7 @@
   border: 2px solid #27ae60;
 }
 
-.btn.secondary:hover {
+.btn.service:hover {
   background: #27ae60;
   color: white;
 }

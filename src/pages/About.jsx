@@ -1,13 +1,15 @@
-function Home() {
-  return (
-    <div className="home">
-      <header className="hero">
-        <h1>Compassionate Care at Home</h1>
-        <p>Affordable, accessible, and professional healthcare services delivered to your doorstep.</p>
-        <a href="/services" className="btn">Book a Nurse</a>
-      </header>
-    </div>
-  );
-}
+import About from "../components/About/About";
+import Story from "../components/Story/Story";
+import Mission from "../components/Mission/Mission";
 
-export default Home;
+const AboutPage = () => {
+  return (
+    <>
+      <About />
+      <Story />
+      <Mission />
+    </>
+  );
+};
+
+export default AboutPage;
