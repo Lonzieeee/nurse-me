@@ -1,0 +1,164 @@
+.members {
+    padding: 80px 20px;
+    background: #f9fafb;
+    position: relative;
+    overflow: hidden;
+  }
+
+  
+  .members::before,
+  .members::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+ 
+  .members::before {
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/physio.png");
+  }
+
+ 
+  .members::after {
+    bottom: 0;
+    left: 0;
+    width: 340px;
+    height: 340px;
+    background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/therapyservice.png");
+  }
+
+  .members-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .members-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .members-container h2 {
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+    margin-bottom: 10px;
+    color: #2d9cdb;
+  }
+  
+  .subtitle {
+    font-size: clamp(0.95rem, 0.8rem + 0.6vw, 1.1rem);
+    color: #555;
+    margin-bottom: 50px;
+  }
+  
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+  }
+  
+  .member-card {
+    background: #fff;
+    padding: clamp(12px, 1.2vw, 16px);
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.9s cubic-bezier(.22,.61,.36,1), opacity 0.9s ease, box-shadow 0.25s ease;
+    opacity: 0;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    will-change: transform, opacity;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member-card .icon {
+    width: clamp(48px, 5vw, 64px);
+    height: clamp(48px, 5vw, 64px);
+    margin: 0 auto 15px auto;
+  }
+
+  .member-card .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .member-card h3 {
+    font-size: 1.25rem;
+    color: #111;
+  }
+  
+  @media (max-width: 900px) {
+    .members-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .members::before {
+      width: 240px;
+      height: 240px;
+      top: 0;
+      right: 0;
+    }
+    .members::after {
+      width: 260px;
+      height: 260px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .members-grid {
+      grid-template-columns: 1fr;
+    }
+    .members::before 
+    {
+         width: 160px; 
+         height: 160px; 
+         opacity: 0.12; 
+        }
+    .members::after 
+    {
+         width: 180px; 
+         height: 180px; 
+         opacity: 0.12; 
+        }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .member-card,
+    .member-card.left,
+    .member-card.right {
+      transition: none;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+
+  .member-card.left {
+    transform: translateX(-64px);
+  }
+
+  .member-card.right {
+    transform: translateX(64px);
+  }
+
+  .member-card.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  

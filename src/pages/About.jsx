@@ -4,6 +4,7 @@ import Mission from "../components/Mission/Mission";
 import Team from "../components/Team/Team";
 import Impact from "../components/Impact/Impact";
 
+
 const AboutPage = () => {
   return (
     <>
