@@ -1,7 +1,19 @@
 .story-container {
   background: #f9f9f9; 
   padding: 80px 20px;
+  margin-top: 0;
 }
+
+.story-heading {
+  max-width: 1200px;
+  margin:  0 auto 8px auto;
+  font-size: 1.9rem;
+ color: #333;
+  display: block;
+  text-align: center;
+}
+
+
 
 .story-grid {
   display: grid;
@@ -9,6 +21,7 @@
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 .story-left {
@@ -17,9 +30,10 @@
 
 .story-sticky-img {
   position: sticky;
-  top: 80px;
+  top: 64px;
+  margin-top: 50px;
   width: 100%;
-  height: auto;
+  height: 80%;
   
   border-radius: 50% 12px 12px 50% / 50% 12px 12px 50%;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
@@ -42,6 +56,7 @@
 .story-right {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
   
 .story-section {
@@ -57,11 +72,12 @@
   }
   
 .story-title {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-bottom: 20px;
     position: relative;
   display: inline-block;
     color: #2d9cdb; 
+
   }
   
   .story-title.underline::after {
@@ -72,7 +88,7 @@
     width: 0;
     height: 4px;
     background: #27ae60; 
-    border-radius: 2px;
+    border-radius: 1px;
     animation: drawUnderline 1.5s forwards;
     animation-delay: 0.5s;
   }
@@ -80,6 +96,22 @@
   .story-section.visible .story-title.underline::after {
     width: 100%;
   }
+
+.story-top-right-img {
+  position: absolute;
+  top: -20%;
+  right: -30%;
+  width: 180px;
+  height: auto;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .story-top-right-img {
+   display: none;
+  }
+}
   
   @keyframes drawUnderline {
     from {
@@ -91,7 +123,7 @@
   }
   
 .story-section p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: #333;
   }

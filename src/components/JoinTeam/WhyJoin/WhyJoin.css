@@ -1,0 +1,302 @@
+
+
+.why-join-modern {
+    min-height: 80vh;
+    background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #f3e8ff 100%);
+    padding: 80px 24px;
+  }
+  
+  .why-container-modern {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+
+  .header-section {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 16px;
+  }
+  
+  .title-accent {
+    color: #2563eb;
+  }
+  
+  .title-underline {
+    width: 96px;
+    height: 4px;
+    background: linear-gradient(90deg, #2d9cdb, #27ae60);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+  
+  
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  
+  
+  .benefits-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .benefit-card-modern {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .benefit-card-modern:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .benefit-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .icon-container {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .benefit-card-modern:hover .icon-container {
+    transform: rotate(6deg);
+  }
+  
+  .icon-blue {
+    background-color: #2d9cdb;
+  }
+  
+  .icon-purple {
+    background-color: #27ae60;
+  }
+  
+  .icon-red {
+    background-color: #2d9cdb;
+  }
+  
+  .icon-green {
+    background-color: #27ae60;
+  }
+  
+  .text-content {
+    flex: 1;
+  }
+  
+  .benefit-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+  }
+  
+  .benefit-card-modern:hover .benefit-title {
+    color: #2563eb;
+  }
+  
+  .benefit-desc {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  
+  
+  .image-section {
+    position: relative;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #dbeafe, #f3e8ff);
+
+    padding: 32px;
+  }
+  
+  .decoration-top {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 80px;
+    height: 80px;
+    background: rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    filter: blur(40px);
+  }
+  
+  .decoration-bottom {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    width: 128px;
+    height: 128px;
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    filter: blur(40px);
+  }
+  
+  .main-image-wrapper {
+    position: relative;
+    z-index: 10;
+    background: white;
+    border-radius: 16px;        
+  }
+
+  .main-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .floating-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    border-radius: 999px;
+    padding: 8px 12px;
+    z-index: 20;
+  }
+
+  .badge-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 4px rgba(16,185,129,0.15);
+  }
+
+  .badge-text {
+    font-size: 13px;
+    color: #111827;
+    font-weight: 600;
+  }
+
+  .decoration-corner-1,
+  .decoration-corner-2 {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: #93c5fd;
+    opacity: 0.5;
+  }
+
+  .decoration-corner-1 
+  {
+     top: -8px; 
+     left: -8px; 
+    }
+  .decoration-corner-2 
+  {
+     bottom: -8px; 
+     right: -8px; 
+    }
+
+
+
+  
+  @media (max-width: 1024px) {
+    .content-grid 
+    {
+         grid-template-columns: 1fr; gap: 40px; 
+        }
+    .image-section 
+    {
+         order: 2; 
+        }
+    .benefits-container 
+    {
+         order: 1; 
+        }
+    .floating-badge 
+    {
+         bottom: -12px; 
+         right: -12px; 
+        }
+  }
+
+  @media (max-width: 768px) {
+    .why-join-modern 
+    {
+         padding: 60px 16px; 
+        }
+    .main-title 
+    {
+         font-size: 2rem; 
+        }
+    .benefit-card-modern 
+    {
+         padding: 20px; 
+        }
+    .icon-container 
+    {
+         width: 48px; 
+         height: 48px; 
+        }
+    .image-container 
+    {
+         padding: 20px; 
+         border-radius: 16px; 
+        }
+    .decoration-top 
+    { 
+        width: 64px; 
+        height: 64px; 
+    }
+    .decoration-bottom 
+    {
+         width: 96px; 
+         height: 96px; 
+        }
+  
+  }

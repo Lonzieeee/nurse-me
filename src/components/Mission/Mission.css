@@ -1,141 +1,205 @@
-.mission-section {
-    background: #f9f9f9;
-    padding: 80px 20px;
+
+
+.mission-container {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: -10%
+  }
+  
+  .mission-wrapper {
+    max-width: 64rem;
+    width: 100%;
+  }
+  
+  .mission-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 4rem;
+  }
+  
+  .circles-container {
+    position: relative;
+    width: 100%;
+    height: 24rem;
+  }
+  
+  .circle-wrapper {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+  transition: transform 380ms ease, opacity 380ms ease;
+  opacity: 1;
+  }
+  
+  .circle-relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+  }
+  
+  .inner-circle {
+    position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  padding: 1.75rem;
+  }
+  
+  .circle-content {
     text-align: center;
   }
   
-  .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 50px;
-    color: #2d9cdb;
-    position: relative;
-    display: inline-block;
+  .circle-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #111827;
+    margin-bottom: 0.5rem;
   }
   
-  .section-title::after {
-    content: "";
+  .circle-text {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #374151;
+  }
+  
+  .arrow {
     position: absolute;
+    width: 0;
+    height: 0;
+   
+  }
+  
+ 
+  .vision-wrapper {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .vision-ring {
+    background: conic-gradient(from 270deg, transparent 0deg, transparent 100deg, #dc2626 100deg, #dc2626 360deg);
+  }
+  
+  .vision-arrow {
+    top: -2%;
+    right: 40%;
+    border-left: 15px solid #dc2626;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: rotate(180deg);
+  }
+  
+  
+  .mission-wrapper {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .mission-ring {
+    background: conic-gradient(from 180deg, transparent 0deg, transparent 100deg, #f59e0b 100deg, #f59e0b 360deg);
+  }
+  
+  .mission-arrow {
+    bottom:-1.5%;
+    left: 43%;
+    border-bottom: 15px solid #f59e0b;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform: rotate(-90deg);
+  }
+  
+  
+  .values-wrapper {
+    bottom: 0;
     left: 0;
-    bottom: -8px;
-    width: 100%;
-    height: 4px;
-    background: #27ae60;
-    border-radius: 2px;
   }
   
-/* Circular rings layout */
-.mission-circles {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 24px;
-  align-items: center;
-}
-  
-/* ring core */
-.ring {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  background: conic-gradient(from 270deg, transparent 0 70%, currentColor 70% 100%);
-  color: #d32f2f; /* default red, overridden below */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-}
-
-.ring::after {
-  content: "";
-  position: absolute;
-  inset: 10%;
-  border-radius: 50%;
-  background: #fff;
-  z-index: 0;
-}
-
-/* Arrow heads to suggest flow between rings */
-.ring::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15));
-}
-
-.ring .ring-content {
-  position: relative;
-  width: 70%;
-  text-align: left;
-  font-size: 0.98rem;
-  line-height: 1.5;
-  color: #333;
-  z-index: 1;
-}
-
-.ring .ring-label {
-  position: absolute;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #111;
-  z-index: 2;
-}
-
-/* Position the three rings in a triangular layout */
-.ring-vision {
-  grid-column: 3 / span 4;
-  color: #d32f2f; /* red */
-}
-.ring-vision .ring-label { bottom: 100%; left: 0; transform: translateY(-8px); }
-.ring-vision::before {
-  /* arrow pointing toward Mission (to the right) */
-  right: 6%;
-  top: 58%;
-  border-width: 12px 0 12px 18px;
-  border-color: transparent transparent transparent currentColor;
-}
-
-.ring-mission {
-  grid-column: 6 / span 4;
-  color: #f2b01e; /* yellow */
-}
-.ring-mission .ring-label { right: -8px; top: 45%; transform: translateX(100%); }
-.ring-mission::before {
-  /* arrow pointing toward Values (down) */
-  left: 50%;
-  bottom: 6%;
-  transform: translateX(-50%);
-  border-width: 18px 12px 0 12px;
-  border-color: currentColor transparent transparent transparent;
-}
-
-.ring-values {
-  grid-column: 4 / span 5;
-  color: #2e7d32; /* green */
-}
-.ring-values .ring-label { top: 100%; left: 0; transform: translateY(8px); }
-.ring-values::before {
-  /* arrow pointing back toward Vision (up-left) */
-  left: 8%;
-  top: 32%;
-  border-width: 12px 18px 12px 0;
-  border-color: transparent currentColor transparent transparent;
-}
-
-@media (max-width: 900px) {
-  .mission-circles {
-    grid-template-columns: 1fr;
+  .values-ring {
+    background: conic-gradient(from 90deg, transparent 0deg, transparent 100deg, #16a34a 100deg, #16a34a 360deg);
   }
-  .ring-vision,
-  .ring-mission,
-  .ring-values {
-    grid-column: auto;
+  
+  .values-arrow {
+    top: 92.5%;
+    right: 53%;
+    border-right: 15px solid #16a34a;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: rotate(-180deg);
   }
-}
   
-/* remove old card styles */
   
+  @media (min-width: 768px) {
+    .circles-container {
+      height: 31.25rem;
+    }
+    
+    .circle-wrapper {
+      width: 14rem;
+      height: 14rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .circles-container {
+      position: static;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .circle-wrapper {
+      position: static !important;
+      transform: none !important;
+       margin: 0 auto;
+       width: 12rem; 
+       height: 12rem;
+    }
+    
+    .arrow {
+      display: none;
+    }
+
+   
+     .inner-circle {
+       top: 0.6rem;
+       left: 0.6rem;
+       right: 0.6rem;
+       bottom: 0.6rem;
+       padding: 0.9rem;
+     }
+     .circle-label {
+       font-size: 0.75rem;
+     }
+     .circle-text {
+       font-size: 0.72rem;
+       line-height: 1.35;
+       word-break: break-word;
+       hyphens: auto;
+     }
+  }
+
+

@@ -9,6 +9,8 @@ const Story = () => {
 
   return (
     <section className="story-container">
+      <h2 className="story-heading">Why NurseMe Was Born:</h2>
+     
       <div className="story-grid">
         <aside className="story-left">
           <img
@@ -19,6 +21,12 @@ const Story = () => {
           />
         </aside>
         <div className="story-right">
+          <img
+            className="story-top-right-img"
+            src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/pills-removebg-preview.png"
+            alt="Pills illustration"
+            loading="lazy"
+          />
           
           <div className="story-section">
             <h2 className="story-title underline">The Challenge</h2>

@@ -5,6 +5,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <nav className="navbar">
@@ -47,7 +48,39 @@ function Navbar() {
             </button>
           </li>
           <li><Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>Home</Link></li>
-          <li><Link to="/services" className="nav-link" onClick={() => setIsOpen(false)}>Services</Link></li>
+          <li className={`dropdown ${isServicesOpen ? "open" : ""}`} 
+              onMouseEnter={() => setIsServicesOpen(true)} 
+              onMouseLeave={() => setIsServicesOpen(false)}>
+            <button
+              className="nav-link dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded={isServicesOpen}
+              onClick={(e) => {
+                
+                if (window.innerWidth <= 768) {
+                  e.preventDefault();
+                  setIsServicesOpen((v) => !v);
+                } else {
+                  
+                  setIsOpen(false);
+                }
+              }}
+            >
+              Services
+            </button>
+            <ul className="dropdown-menu" role="menu">
+              <li role="none">
+                <Link role="menuitem" to="/services/book" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
+                  Book a Visit
+                </Link>
+              </li>
+              <li role="none">
+                <Link role="menuitem" to="/services/join" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
+                  Join as a Caregiver
+                </Link>
+              </li>
+            </ul>
+          </li>
           <li><Link to="/how-it-works" className="nav-link" onClick={() => setIsOpen(false)}>How It Works</Link></li>
           <li><Link to="/about" className="nav-link" onClick={() => setIsOpen(false)}>About</Link></li>
           <li><Link to="/contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</Link></li>
