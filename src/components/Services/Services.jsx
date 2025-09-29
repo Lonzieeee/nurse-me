@@ -74,6 +74,9 @@ function Services() {
               <img src={service.icon} alt={service.title} className="service-icon" />
               <h3>{service.title}</h3>
               <p>{service.desc}</p>
+              <Link to="/services" className="learn-more-btn">
+                Learn More
+              </Link>
             </div>
           ))}
         </div>
