@@ -55,26 +55,26 @@ const providers = [
 
 export default function Providers() {
   const [isMobile, setIsMobile] = React.useState(false);
+  const [isTablet, setIsTablet] = React.useState(false);
 
   React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+    const checkScreenSize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+        setIsTablet(false);
+      } else if (window.innerWidth <= 1024) {
+        setIsMobile(false);
+        setIsTablet(true);
+      } else {
+        setIsMobile(false);
+        setIsTablet(false);
+      }
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
-
-
-  const getMobilePosition = (index) => {
-    const spacing = 85; 
-    const startY = 8; 
-    return {
-      x: 50, 
-      y: startY + (index * spacing)
-    };
-  };
 
   return (
     <section className="providers-section">
@@ -84,9 +84,9 @@ export default function Providers() {
       </p>
 
       <div className="providers-flow">
-        <div className="providers-path">
+        <div className={`providers-path ${isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop'}`}>
          
-          {!isMobile && (
+          {!isMobile && !isTablet && (
             <svg className="providers-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
               <defs>
                 <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
@@ -102,16 +102,14 @@ export default function Providers() {
             </svg>
           )}
           {providers.map((provider, index) => {
-            const position = isMobile ? getMobilePosition(index) : { x: provider.x, y: provider.y };
-            
             return (
               <div
                 className={`providers-step ${index === 5 ? "highlight" : ""}`}
                 key={index}
-                style={{
-                  left: `${position.x}%`,
-                  top: `${position.y}%`,
-                }}
+                style={!isMobile && !isTablet ? {
+                  left: `${provider.x}%`,
+                  top: `${provider.y}%`,
+                } : {}}
               >
                 <div className="step-circle">
                   <div className="step-icon">
@@ -127,7 +125,6 @@ export default function Providers() {
                   </div>
                 </div>
                 <span className="step-label">{provider.title}</span>
-                {index < providers.length - 1 && <div className="step-connector"></div>}
               </div>
             );
           })}

@@ -60,7 +60,7 @@
     line-height: 1.6;
   }
   
-  /* Timeline line behind icons */
+  
   .trust-line {
     position: absolute;
     top: 36px;
@@ -72,29 +72,179 @@
     border-radius: 2px;
   }
   
-  /* Responsive layout */
-  @media screen and (max-width: 768px) {
-    .trust-timeline {
-      flex-direction: column;
-      gap: 60px;
-    }
-  
-    .trust-line {
-      width: 4px;
-      height: 100%;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-    }
-  
-    .trust-step {
-      text-align: center;
-      padding-left: 0;
-      padding-right: 0;
-    }
-  
-    .trust-icon {
-      margin-bottom: 12px;
-    }
+
+
+/* Large Tablets */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .trust {
+    padding: 70px 20px;
   }
   
+  .trust-title {
+    font-size: 1.9rem;
+    margin-bottom: 50px;
+  }
+  
+  .trust-timeline {
+    gap: 30px;
+  }
+  
+  .trust-step {
+    min-width: 200px;
+  }
+  
+  .trust-icon {
+    width: 68px;
+    height: 68px;
+    font-size: 1.9rem;
+  }
+  
+  .trust-step h3 {
+    font-size: 1.15rem;
+  }
+  
+  .trust-step p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Tablets */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .trust {
+    padding: 60px 20px;
+  }
+  
+  .trust-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+  
+  .trust-timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .trust-step {
+    min-width: auto;
+    padding: 0;
+  }
+  
+  .trust-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .trust-step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .trust-step p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  
+  .trust-line {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .trust {
+    padding: 50px 15px;
+  }
+  
+  .trust-container {
+    max-width: 100%;
+  }
+  
+  .trust-title {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+  }
+  
+  .trust-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 350px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .trust-step {
+    text-align: center;
+    padding: 20px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(45, 156, 219, 0.1);
+  }
+
+  .trust-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .trust-step h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #2d9cdb;
+  }
+  
+  .trust-step p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #666;
+  }
+
+  /* Vertical connecting line */
+  .trust-line {
+    display: none;
+  }
+}
+
+/* Extra Small Mobile */
+@media screen and (max-width: 375px) {
+  .trust {
+    padding: 45px 12px;
+  }
+  
+  .trust-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .trust-timeline {
+    gap: 30px;
+    max-width: 320px;
+  }
+  
+  .trust-step {
+    padding: 18px 12px;
+  }
+  
+  .trust-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  
+  .trust-step h3 {
+    font-size: 1rem;
+  }
+  
+  .trust-step p {
+    font-size: 0.8rem;
+  }
+}  

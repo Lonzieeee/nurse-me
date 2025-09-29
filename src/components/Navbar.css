@@ -116,10 +116,42 @@
   font-size: 1rem;
   color: #333;
   transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
 }
 
 .nav-link:hover {
   color: #2d9cdb;
+}
+
+.nav-link.active {
+  color: #2d9cdb;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2d9cdb;
+  border-radius: 1px;
+}
+
+
+.nav-link:not(.active):hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2d9cdb;
+  border-radius: 1px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
 
@@ -257,6 +289,17 @@
 
   .nav-link {
     font-size: 1.0625rem;
+    padding-bottom: 2px;
+  }
+
+  .nav-link.active::after {
+    height: 2px;
+    bottom: -2px;
+  }
+
+  .nav-link:not(.active):hover::after {
+    height: 2px;
+    bottom: -2px;
   }
 
   .nav-cta {
