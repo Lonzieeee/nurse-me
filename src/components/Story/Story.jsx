@@ -8,14 +8,14 @@ const Story = () => {
   }, []);
 
   return (
-    <section className="story-container">
+    <section className="story-container" id="about-story">
       <h2 className="story-heading">Why NurseMe Was Born:</h2>
      
       <div className="story-grid">
         <aside className="story-left">
           <img
             className="story-sticky-img"
-            src="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/aboutstory-min(1).png"
+            src="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/family-min.png"
             alt="Nurse caring for patient at home"
             loading="lazy"
           />

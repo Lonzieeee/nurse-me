@@ -88,6 +88,7 @@
   
   }
   
+  
   @media (max-width: 768px) {
     .register-form {
       grid-template-columns: 1fr;
@@ -102,4 +103,5 @@
     grid-template-columns: 1fr;
   }
   }
+
   

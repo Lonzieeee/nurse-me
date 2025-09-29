@@ -1,0 +1,96 @@
+.visit-hero {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    height: clamp(70vh, 90vh, 100vh);
+    background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/visit-min.png")
+      center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .visit-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65); 
+    z-index: 1;
+  }
+  
+  .visit-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    width: min(92%, 1100px);
+    padding: 24px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .visit-hero h1 {
+    font-size: clamp(2rem, 3.5vw + 1rem, 3.25rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+    
+  }
+  
+  .visit-hero p {
+    font-size: clamp(1rem, 1.2vw + 0.75rem, 1.25rem);
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+  
+  .visit-hero-btn {
+    padding: 12px 20px;        
+    font-size: clamp(0.95rem, 0.8vw + 0.6rem, 1rem);
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 150px; 
+    background: #2d9cdb;
+  color: white;
+  border: none;
+  }
+  
+  .visit-hero-btn:hover {
+    background: #1b7dbd;
+  }
+  
+ 
+  .soft-blue {
+    color: #2d9cdb;
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    .visit-hero {
+      background-position: center top;
+    }
+
+    .visit-hero-content {
+      padding: 20px;
+    }
+
+    .visit-hero p {
+      max-width: 95%;
+    }
+
+    .visit-hero-btn {
+      padding: 12px 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .visit-hero-content {
+      width: 94%;
+      padding: 16px;
+    }
+
+    .visit-hero p {
+      margin-bottom: 24px;
+    }
+  }
+  

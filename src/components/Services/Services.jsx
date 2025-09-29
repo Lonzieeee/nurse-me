@@ -77,11 +77,7 @@ function Services() {
             </div>
           ))}
         </div>
-        <div className="services-btn-container">
-          <Link to="/services" className="services-btn">
-            View All Services
-          </Link>
-        </div>
+        
       </div>
     </section>
   );

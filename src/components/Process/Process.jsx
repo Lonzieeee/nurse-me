@@ -56,7 +56,7 @@ function Process() {
           ))}
         </motion.div>
         <div className="process-cta">
-          <Link to="/contact" className="process-btn">Book a visit now</Link>
+          <Link to="/services/book" className="process-btn">Book a visit now</Link>
         </div>
       </div>
     </section>

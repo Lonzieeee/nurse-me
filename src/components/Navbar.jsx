@@ -85,8 +85,8 @@ function Navbar() {
           <li><Link to="/about" className="nav-link" onClick={() => setIsOpen(false)}>About</Link></li>
           <li><Link to="/contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</Link></li>
           <li className="nav-cta">
-            <Link to="/login" className="nav-btn" onClick={() => setIsOpen(false)}>
-              Login / Sign Up
+            <Link to="/signin" className="nav-btn" onClick={() => setIsOpen(false)}>
+              Sign Up
             </Link>
           </li>
         </ul>

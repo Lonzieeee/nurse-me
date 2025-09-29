@@ -135,7 +135,7 @@ export default function Providers() {
       </div>
       
       <div className="providers-button-container">
-        <a href="/login" className="btn service">
+        <a href="/services/join" className="btn service">
           Join as a Healthcare Provider
         </a>
       </div>

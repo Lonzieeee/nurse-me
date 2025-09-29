@@ -7,17 +7,17 @@ export default function Contact() {
   return (
     <section className="contact-snippet">
       <div className="contact-container">
-        <h2 className="contact-title">Ready to get started?</h2>
+        <h2 className="contact-title">Let's Get In Touch.</h2>
         <p className="contact-subtitle">
           Join thousands of Kenyans who trust NurseMe for their healthcare needs.
         </p>
 
         <div className="contact-cta">
-          <Link to="/contact" className="contact-btn primary">
-            Book your visit
+          <Link to="/services/book" className="contact-btn pill">
+            Book a visit
           </Link>
-          <Link to="/contact" className="contact-btn secondary">
-            Become a provider
+          <Link to="/services/join" className="contact-btn pill">
+            Join as a caregiver
           </Link>
         </div>
       </div>

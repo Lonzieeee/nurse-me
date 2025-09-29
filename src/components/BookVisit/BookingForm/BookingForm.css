@@ -1,0 +1,143 @@
+.booking-form-section {
+    padding: 96px 20px; 
+    background: transparent;
+    /* min-height: 100vh; */
+  }
+  
+  .booking-form-container {
+    width: 100%;
+    max-width: 1040px; 
+    margin: 0 auto; 
+    background: transparent; 
+    padding: 0 16px; 
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .booking-form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2d9cdb;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  
+  .form-row.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px; 
+    align-items: start;
+  }
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-section.span-2 {
+  grid-column: 1 / -1;
+}
+
+  .form-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+  }
+  
+  .form-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #27ae60;
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #213547;
+  }
+
+  .required-mark {
+    color: #2d9cdb; 
+    margin-left: 2px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #2d9cdb;
+  }
+  
+  .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .booking-submit {
+    background: transparent;
+    color: #333;
+    text-transform: uppercase;
+    border: 2px solid #27ae60;
+    padding: clamp(10px, 1.8vw, 12px) clamp(16px, 2.5vw, 18px);
+    font-size: clamp(0.9rem, 0.85rem + 0.4vw, 0.95rem);
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 150px;  
+  align-self: center;
+  width: clamp(220px, 45vw, 360px);
+  }
+  
+  .booking-submit:hover {
+    background: #27ae60;
+  color: #000 ;
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    .booking-form-container {
+      padding: 30px 20px;
+    }
+  
+    .booking-form-title {
+      font-size: 1.6rem;
+    }
+
+    .form-row.two-col {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .booking-submit {
+      align-self: stretch;
+      width: 100%;
+    }
+  }
+  
+  

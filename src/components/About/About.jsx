@@ -40,7 +40,7 @@ const About = () => {
             </div>
           </div>
 
-          <button className="about-btn">Discover Our Story</button>
+          <a className="about-btn" href="#about-story">Discover Our Story</a>
         </div>
       </div>
     </section>

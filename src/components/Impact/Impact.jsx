@@ -95,7 +95,7 @@ const Impact = () => {
 
      
       <div className="impact-cta">
-        <button className="cta-btn">Join Us in Making a Difference</button>
+        <a className="cta-btn" href="/services/join">Join Us in Making a Difference</a>
       </div>
     </section>
   );

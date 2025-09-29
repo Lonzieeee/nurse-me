@@ -58,7 +58,7 @@ function Hero() {
           muted
           playsInline
           preload="metadata"
-          poster="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/desktopfallback.png"
+          poster="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/fallback-min.png"
         />
       )}
 
@@ -73,10 +73,10 @@ function Hero() {
           to your doorstep.
         </p>
         <div className="hero-buttons">
-          <Link to="/services" className="btn primary">
+          <Link to="/services/book" className="btn primary">
             Book a Visit Now
           </Link>
-          <Link to="/login" className="btn secondary">
+          <Link to="/services/join" className="btn secondary">
             Join as a Healthcare Provider
           </Link>
         </div>

@@ -1,0 +1,453 @@
+.sign-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  padding: 20px;
+}
+
+.sign-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  min-height: 600px;
+}
+
+
+.sign-left {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #ffffff;
+  transform: scale(1.2);
+}
+
+
+.sign-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.sign-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.sign-header {
+  text-align: center;
+  margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.sign-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.025em;
+}
+
+.sign-header p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sign-form {
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-row.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  height: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.form-field {
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #9ca3af;
+  z-index: 1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 44px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #111827;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #2d9cdb;
+  box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #9ca3af;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #6b7280;
+}
+
+.create-account-btn {
+  width: 100%;
+  background: #2d9cdb;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.create-account-btn:hover {
+  background: #1e7bb8;
+  transform: translateY(-1px);
+}
+
+.create-account-btn:active {
+  transform: translateY(0);
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.login-options.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  height: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #2d9cdb;
+}
+
+.forgot-password {
+  color: #2d9cdb;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.forgot-password:hover {
+  color: #1e7bb8;
+  text-decoration: underline;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider span {
+  background: #ffffff;
+  padding: 0 16px;
+  color: #333;
+  font-size: 0.875rem;
+  position: relative;
+}
+
+.social-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  border-color: #9ca3af;
+  color: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn:active {
+  transform: translateY(0);
+}
+
+.google-btn:hover {
+  border-color: #4285f4;
+}
+
+.apple-btn:hover {
+  border-color: #000000;
+}
+
+.sign-footer {
+  text-align: center;
+}
+
+.sign-footer p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.sign-footer a {
+  color: #2d9cdb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.sign-footer a:hover {
+  color: #1e7bb8;
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .sign-page {
+    padding: 0;
+    background: #ffffff;
+  }
+  
+  .sign-container {
+    grid-template-columns: 1fr;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 100vh;
+    margin-top: 80px;
+  }
+  
+  .sign-left {
+    height: 300px;
+    order: 2;
+  }
+  
+  .image-carousel {
+    min-height: 300px;
+  }
+  
+  .sign-right {
+    order: 1;
+    padding: 32px 24px;
+  }
+  
+  .sign-form-container {
+    max-width: none;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .sign-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .carousel-indicators {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-right {
+    padding: 24px 16px;
+  }
+  
+  .sign-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .sign-header p {
+    font-size: 0.875rem;
+  }
+  
+  .input-group input {
+    padding: 10px 10px 10px 40px;
+    font-size: 0.9rem;
+  }
+  
+  .create-account-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .social-btn {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .sign-left {
+    height: 250px;
+  }
+  
+  .image-carousel {
+    min-height: 250px;
+  }
+}

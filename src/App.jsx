@@ -8,7 +8,8 @@ import JoinCaregiver from "./pages/JoinCaregiver";
 import HowItWorks from "./pages/HowItWorks";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
+import Sign from "./pages/Sign";
+import Login from "./pages/Sign"; 
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/signin" element={<Sign />} />
         <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />

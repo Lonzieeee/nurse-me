@@ -1,11 +1,15 @@
 import React from "react";
-
+import VisitHero from "../components/BookVisit/VisitHero/VisitHero";
+import Process from "../components/Process/Process";
+import BookingForm from "../components/BookVisit/BookingForm/BookingForm";
+// import TrustContact from "../components/BookVisit/Trust&Contact/Trust&Contact";
 export default function BookVisit() {
   return (
-    <main style={{ paddingTop: 90, maxWidth: 960, margin: "0 auto", paddingInline: 20 }}>
-      <h1 style={{ fontSize: "1.75rem", marginBottom: 12 }}>Book a Visit</h1>
-      <p style={{ color: "#444" }}>This page is coming soon.</p>
-    </main>
+    <div>
+      <VisitHero />
+      <Process />
+      <BookingForm />
+      {/* <TrustContact /> */}
+    </div>
   );
 }
-
