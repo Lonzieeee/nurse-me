@@ -1,0 +1,289 @@
+.nurse-pricing {
+  padding: 80px 20px;
+  background: #fff;
+  color: #333;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pricing-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.pricing-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(45, 156, 219, 0.15);
+  border-color: #2d9cdb;
+}
+
+.pricing-card.popular {
+  border-color: #2d9cdb;
+  box-shadow: 0 8px 32px rgba(45, 156, 219, 0.2);
+  transform: scale(1.05);
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #2d9cdb, #1b7dbd);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 8px;
+}
+
+.plan-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.currency {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.plan-features {
+  flex-grow: 1;
+  margin-bottom: 32px;
+}
+
+.plan-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  color: #27ae60;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.plan-footer {
+  margin-top: auto;
+}
+
+.insurance-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background: rgba(39, 174, 96, 0.1);
+  border: 1px solid rgba(39, 174, 96, 0.3);
+  border-radius: 8px;
+  color: #27ae60;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.insurance-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.get-started-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: #2d9cdb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  background: #1b7dbd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 156, 219, 0.3);
+}
+
+.pricing-card.popular .get-started-btn {
+  background: linear-gradient(135deg, #2d9cdb, #1b7dbd);
+  box-shadow: 0 4px 16px rgba(45, 156, 219, 0.3);
+}
+
+.pricing-card.popular .get-started-btn:hover {
+  box-shadow: 0 8px 24px rgba(45, 156, 219, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .pricing-card.popular {
+    transform: none;
+  }
+  
+  .pricing-card.popular:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .nurse-pricing {
+    padding: 60px 16px;
+  }
+  
+  .pricing-header {
+    margin-bottom: 48px;
+  }
+  
+  .pricing-header h2 {
+    font-size: 2rem;
+  }
+  
+  .pricing-header p {
+    font-size: 1.1rem;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .pricing-card {
+    padding: 24px 20px;
+  }
+  
+  .amount {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nurse-pricing {
+    padding: 50px 12px;
+  }
+  
+  .pricing-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .pricing-header p {
+    font-size: 1rem;
+  }
+  
+  .pricing-card {
+    padding: 20px 16px;
+  }
+  
+  .plan-name {
+    font-size: 1.3rem;
+  }
+  
+  .amount {
+    font-size: 1.8rem;
+  }
+  
+  .plan-features li {
+    font-size: 0.9rem;
+  }
+  
+  .get-started-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}

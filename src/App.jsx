@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Sign from "./pages/Sign";
 import Login from "./pages/Sign"; 
+import HomeNursing from "./pages/HomeNursing";
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signin" element={<Sign />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/home-nursing" element={<HomeNursing />} />
       </Routes>
       <Footer />
     </Router>
