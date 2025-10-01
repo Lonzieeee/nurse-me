@@ -16,7 +16,7 @@ function Services() {
       title: "Doctor House Calls", 
       desc: "Experienced doctors visit your home to offer personalized check-ups, treatment, and ongoing medical guidance.", 
       icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/doctor%20house%20calls.png",
-      link: "/services"
+      link: "/doctor-house-calls"
     },
     { 
       title: "Physiotherapy at Home", 

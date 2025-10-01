@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Sign from "./pages/Sign";
 import Login from "./pages/Sign"; 
 import HomeNursing from "./pages/HomeNursing";
+import DoctorHouseCalls from "./pages/DoctorHouseCalls";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/signin" element={<Sign />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home-nursing" element={<HomeNursing />} />
+        <Route path="/doctor-house-calls" element={<DoctorHouseCalls />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,171 @@
+.hero-doctor-house-calls {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/DoctorHouseCalls-min.png")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px; 
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: left;
+  color: #fff;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+
+.breadcrumb {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.breadcrumb-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #2d9cdb;
+}
+
+.breadcrumb-services {
+  color: #e2e8f0;
+  pointer-events: none;
+  cursor: default;
+}
+
+.breadcrumb-separator {
+  color: #cbd5e0;
+  margin: 0 8px;
+}
+
+.breadcrumb-current {
+  color: #2d9cdb;
+  font-weight: 600;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title .highlight {
+  color: #2d9cdb;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 1024px) {
+  .hero-doctor-house-calls {
+    height: 55vh;
+    min-height: 380px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-doctor-house-calls {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .hero-content {
+    padding: 0 15px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-doctor-house-calls {
+    height: 45vh;
+    min-height: 320px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .breadcrumb {
+    font-size: 0.85rem;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 4px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-doctor-house-calls {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .hero-content {
+    padding: 0 12px;
+  }
+  
+  .hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+}
