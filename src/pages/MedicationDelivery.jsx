@@ -6,7 +6,7 @@ import FAQDelivery from "../components/MedicatonDelivery/FAQdelivery";
 
 function MedicationDelivery() {
   return (
-    <div>
+    <div style={{ paddingTop: '70px' }}>
       <DeliveryHero />
       
       <MedicationProcess />

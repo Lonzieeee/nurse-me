@@ -7,7 +7,7 @@ import FAQDoctor from '../components/DoctorHouseCalls/FAQDoctor';
 
 function DoctorHouseCalls() {
   return (
-    <div className="doctor-house-calls-page">
+    <div className="doctor-house-calls-page" style={{ paddingTop: '70px' }}>
       <DoctorHouseCallsHero />
       <Specialization />
       <Whentobook />

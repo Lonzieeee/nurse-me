@@ -4,18 +4,19 @@ import "./Contact.css";
 
 export default function ContactPage() {
   return (
-    <section className="contact-page">
-      <div className="contact-hero">
-        <div className="hero-overlay"></div>
-        <img 
-          src="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/contactpage-1.webp" 
-          alt="Contact Us" 
-          className="hero-image"
-        />
-        <div className="hero-content">
-          <h1>CONTACT US</h1>
+    <div style={{ paddingTop: '70px' }}>
+      <section className="contact-page">
+        <div className="contact-hero">
+          <div className="hero-overlay"></div>
+          <img 
+            src="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/contactpage-1.webp" 
+            alt="Contact Us" 
+            className="hero-image"
+          />
+          <div className="hero-content">
+            <h1>CONTACT US</h1>
+          </div>
         </div>
-      </div>
       <div className="contact-wrapper">
         <div className="contact-left">
           <h2>Contact Us</h2>
@@ -95,5 +96,6 @@ export default function ContactPage() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

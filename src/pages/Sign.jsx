@@ -74,7 +74,7 @@ export default function Sign() {
   };
 
   return (
-    <div className="sign-page">
+    <div className="sign-page" style={{ paddingTop: '70px' }}>
       <div className="sign-container">
        
         <div className="sign-left">

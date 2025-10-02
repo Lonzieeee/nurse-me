@@ -7,13 +7,13 @@ import Impact from "../components/Impact/Impact";
 
 const AboutPage = () => {
   return (
-    <>
+    <div style={{ paddingTop: '70px' }}>
       <About />
       <Story />
       <Mission />
       <Team />
       <Impact />
-    </>
+    </div>
   );
 };
 

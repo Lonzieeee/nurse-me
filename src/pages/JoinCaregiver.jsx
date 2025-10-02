@@ -5,7 +5,7 @@ import RegisterForm from "../components/JoinTeam/RegisterForm/RegisterForm";
 
 export default function JoinCaregiver() {
   return (
-    <div>
+    <div style={{ paddingTop: '70px' }}>
       <Hero />
       <WhyJoin />   
       <Members />

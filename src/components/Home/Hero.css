@@ -33,7 +33,8 @@
   z-index: 1;
   text-align: left;
   color: white;
-  max-width: 1600px;         
+  max-width: 1600px; 
+  margin-left: 5%;        
 
   display: flex;
   flex-direction: column;

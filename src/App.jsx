@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop/BackToTop";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import BookVisit from "./pages/BookVisit";
@@ -20,6 +21,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />

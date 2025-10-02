@@ -7,7 +7,7 @@ import FAQNurse from "../components/HomeNursing/FAQNurse";
 
 function HomeNursing() {
   return (
-    <div>
+    <div style={{ paddingTop: '70px' }}>
       <HeroHomeNursing />
       <ServiceDesc />
       <ServicesIncluded />

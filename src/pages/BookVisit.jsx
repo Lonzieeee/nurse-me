@@ -5,7 +5,7 @@ import BookingForm from "../components/BookVisit/BookingForm/BookingForm";
 // import TrustContact from "../components/BookVisit/Trust&Contact/Trust&Contact";
 export default function BookVisit() {
   return (
-    <div>
+    <div style={{ paddingTop: '70px' }}>
       <VisitHero />
       <Process />
       <BookingForm />

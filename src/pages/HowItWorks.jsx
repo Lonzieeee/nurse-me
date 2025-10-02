@@ -1,13 +1,11 @@
-function Home() {
+import Process from "../components/Process/Process";
+
+function HowItWorks() {
   return (
-    <div className="home">
-      <header className="hero">
-        <h1>Compassionate Care at Home</h1>
-        <p>Affordable, accessible, and professional healthcare services delivered to your doorstep.</p>
-        <a href="/services" className="btn">Book a Nurse</a>
-      </header>
+    <div style={{ paddingTop: '70px' }}>
+      <Process />
     </div>
   );
 }
 
-export default Home;
+export default HowItWorks;
