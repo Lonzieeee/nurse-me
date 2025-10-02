@@ -1,0 +1,365 @@
+.doctor-faq {
+  padding: 80px 20px;
+  background: #f8fafc;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-faq::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url('https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/ecg-line-min.png'),
+    url('https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/heartbeat-min.png');
+  background-size: 250px 50px, 80px 40px;
+  background-position: 
+    100px 50px, 400px 50px;
+  background-repeat: repeat;
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.doctor-faq::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/faq.png") center/contain no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.doctor-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.doctor-faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.doctor-faq-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.doctor-faq-header .doctor-faq-highlight {
+  color: #2d9cdb;
+}
+
+.doctor-faq-header p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.doctor-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.doctor-faq-item {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-faq-item:hover {
+  border-color: #2d9cdb;
+  box-shadow: 0 8px 24px rgba(45, 156, 219, 0.1);
+}
+
+.doctor-faq-item.doctor-active {
+  border-color: #2d9cdb;
+  box-shadow: 0 8px 24px rgba(45, 156, 219, 0.15);
+}
+
+.doctor-faq-question {
+  width: 100%;
+  padding: 24px 28px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.doctor-faq-question:hover {
+  background: rgba(45, 156, 219, 0.05);
+}
+
+.doctor-faq-item.doctor-active .doctor-faq-question {
+  background: rgba(45, 156, 219, 0.08);
+  color: #2d9cdb;
+}
+
+.doctor-question-text {
+  flex: 1;
+  line-height: 1.4;
+  padding-right: 20px;
+}
+
+.doctor-faq-icon {
+  color: #2d9cdb;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.doctor-faq-item.doctor-active .doctor-faq-icon {
+  transform: rotate(180deg);
+}
+
+.doctor-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.doctor-faq-answer.doctor-show {
+  max-height: 300px;
+}
+
+.doctor-answer-content {
+  padding: 0 28px 28px 28px;
+}
+
+.doctor-answer-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+
+.doctor-faq-contact {
+  margin-top: 40px;
+}
+
+.doctor-contact-card {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 12px;
+}
+
+.doctor-contact-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.doctor-contact-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.doctor-contact-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  min-width: 140px;
+}
+
+.doctor-contact-btn.doctor-primary {
+  background: #2d9cdb;
+  color: white;
+  border-color: #2d9cdb;
+}
+
+.doctor-contact-btn.doctor-primary:hover {
+  background: #1b7dbd;
+  border-color: #1b7dbd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(45, 156, 219, 0.3);
+}
+
+.doctor-contact-btn.doctor-secondary {
+  background: transparent;
+  color: #2d9cdb;
+  border-color: #2d9cdb;
+}
+
+.doctor-contact-btn.doctor-secondary:hover {
+  background: #2d9cdb;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(45, 156, 219, 0.3);
+}
+
+
+@media (max-width: 768px) {
+  .doctor-faq {
+    padding: 60px 16px;
+  }
+  
+  .doctor-faq::after {
+    width: 300px;
+    height: 300px;
+    left: 20px;
+    opacity: 0.6;
+  }
+  
+  .doctor-faq-header {
+    margin-bottom: 48px;
+  }
+  
+  .doctor-faq-header h2 {
+    font-size: 2rem;
+  }
+  
+  .doctor-faq-header p {
+    font-size: 1.1rem;
+  }
+  
+  .doctor-faq-question {
+    padding: 20px 24px;
+    font-size: 1rem;
+  }
+  
+  .doctor-question-text {
+    padding-right: 16px;
+  }
+  
+  .doctor-answer-content {
+    padding: 0 24px 24px 24px;
+  }
+  
+  .doctor-answer-content p {
+    font-size: 0.95rem;
+  }
+  
+  .doctor-contact-card {
+    padding: 32px 24px;
+  }
+  
+  .doctor-contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .doctor-contact-btn {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-faq {
+    padding: 50px 12px;
+  }
+  
+  .doctor-faq::after {
+    width: 200px;
+    height: 200px;
+    left: 10px;
+    opacity: 0.4;
+  }
+  
+  .doctor-faq-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .doctor-faq-header p {
+    font-size: 1rem;
+  }
+  
+  .doctor-faq-question {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .doctor-question-text {
+    padding-right: 12px;
+  }
+  
+  .doctor-answer-content {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .doctor-answer-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .doctor-faq-list {
+    gap: 12px;
+  }
+  
+  .doctor-contact-card {
+    padding: 24px 20px;
+  }
+  
+  .doctor-contact-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .doctor-contact-card p {
+    font-size: 0.95rem;
+  }
+  
+  .doctor-contact-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    min-width: 160px;
+  }
+}
+
+/* Enhanced Accessibility */
+.doctor-faq-question:focus {
+  outline: 2px solid #2d9cdb;
+  outline-offset: 2px;
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: reduce) {
+  .doctor-faq-item,
+  .doctor-faq-question,
+  .doctor-faq-answer,
+  .doctor-faq-icon {
+    transition: none !important;
+  }
+}
