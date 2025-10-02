@@ -28,7 +28,7 @@ function Services() {
       title: "Medication Delivery", 
       desc: "Timely and reliable delivery of prescribed medicines to your doorstep, ensuring convenience and continuity of care.", 
       icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/medication%20delivery.png",
-      link: "/services"
+      link: "/medication-delivery"
     },
     { 
       title: "Chronic Disease Management", 

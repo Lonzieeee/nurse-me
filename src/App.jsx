@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop/BackToTop";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import BookVisit from "./pages/BookVisit";
@@ -12,6 +13,7 @@ import Sign from "./pages/Sign";
 import Login from "./pages/Sign"; 
 import HomeNursing from "./pages/HomeNursing";
 import DoctorHouseCalls from "./pages/DoctorHouseCalls";
+import MedicationDelivery from "./pages/MedicationDelivery";
 
 
 function App() {
@@ -30,8 +32,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home-nursing" element={<HomeNursing />} />
         <Route path="/doctor-house-calls" element={<DoctorHouseCalls />} />
+        <Route path="/medication-delivery" element={<MedicationDelivery />} />
       </Routes>
       <Footer />
+      <BackToTop />
     </Router>
   );
 }

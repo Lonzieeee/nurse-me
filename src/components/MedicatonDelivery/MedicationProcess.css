@@ -1,0 +1,343 @@
+.medication-delivery-process {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.medication-delivery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.delivery-top-right-img {
+  position: absolute;
+  top: 0%;
+  right: -10%;
+  width: 160px;
+  height: auto;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  max-width: 15%;
+}
+
+.delivery-process-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.delivery-process-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.delivery-process-highlight {
+  color: #2d9cdb;
+}
+
+.delivery-process-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.delivery-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.delivery-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+  gap: 30px;
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: var(--step-delay, 0s);
+}
+
+.delivery-step-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.delivery-step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 0;
+  min-width: 30px;
+  flex-shrink: 0;
+}
+
+.delivery-step-icon {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #2d9cdb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  background: white;
+  flex-shrink: 0;
+}
+
+.delivery-step-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.delivery-step-content {
+  flex: 1;
+}
+
+.delivery-step-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.delivery-step-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.delivery-process-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.delivery-start-btn {
+  background: #2d9cdb;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+ 
+}
+
+.delivery-start-btn:hover {
+  transform: translateY(-2px);
+ background-color: #1e95db;
+}
+
+@media (max-width: 1024px) {
+  .medication-delivery-process {
+    padding: 60px 20px;
+  }
+  
+  .delivery-top-right-img {
+    right: -5%;
+    width: 140px;
+    max-width: 12%;
+  }
+  
+  .delivery-process-title {
+    font-size: 2.2rem;
+  }
+  
+  .delivery-steps-container {
+    max-width: 700px;
+  }
+  
+  .delivery-step {
+    padding: 18px;
+    gap: 25px;
+  }
+  
+  .delivery-step-icon {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .delivery-step-icon img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .medication-delivery-process {
+    padding: 50px 15px;
+    overflow-x: hidden;
+  }
+  
+  .medication-delivery-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .delivery-process-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .delivery-process-subtitle {
+    font-size: 1rem;
+  }
+  
+  .delivery-top-right-img {
+    display: none;
+  }
+  
+  .delivery-steps-container {
+    gap: 20px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .delivery-step {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 15px;
+    transform: translateX(50px);
+    transition: all 1.0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: var(--step-delay, 0s);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .delivery-step-visible {
+    transform: translateX(0);
+  }
+  
+  .delivery-step-number {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .delivery-step-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px auto;
+  }
+  
+  .delivery-step-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .delivery-step-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .delivery-step-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .delivery-start-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .medication-delivery-process {
+    padding: 40px 10px;
+  }
+  
+  .delivery-process-header {
+    margin-bottom: 40px;
+  }
+  
+  .delivery-process-title {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  
+  .delivery-process-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .delivery-steps-container {
+    gap: 18px;
+    padding: 0 5px;
+  }
+  
+  .delivery-step {
+    padding: 15px 10px;
+    gap: 12px;
+    transform: translateX(30px);
+  }
+  
+  .delivery-step-number {
+    font-size: 1.2rem;
+  }
+  
+  .delivery-step-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .delivery-step-icon img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .delivery-step-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .delivery-step-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .delivery-start-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 360px) {
+  .medication-delivery-process {
+    padding: 30px 8px;
+  }
+  
+  .delivery-process-title {
+    font-size: 1.4rem;
+  }
+  
+  .delivery-step {
+    padding: 12px 8px;
+  }
+  
+  .delivery-step-title {
+    font-size: 1rem;
+  }
+  
+  .delivery-step-description {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,259 @@
+.delivery-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/pharmacydelivery-min.jpg")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.delivery-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delivery-hero-content {
+  text-align: left;
+  color: #fff;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+
+.delivery-breadcrumb {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.delivery-breadcrumb-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.delivery-breadcrumb-link:hover {
+  color: #2d9cdb;
+  text-decoration: underline;
+}
+
+.delivery-breadcrumb-services,
+.delivery-breadcrumb-current {
+  color: #e5e7eb;
+}
+
+.delivery-breadcrumb-current {
+  font-weight: 600;
+  color: #2d9cdb;
+}
+
+.delivery-breadcrumb-separator {
+  margin: 0 8px;
+  color: #e5e7eb;
+}
+
+
+.delivery-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.delivery-highlight {
+  color: #2d9cdb;
+}
+
+
+.delivery-hero-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #f1f5f9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.delivery-hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.delivery-cta-btn {
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  min-width: 160px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.delivery-cta-btn.delivery-primary {
+  background: #2d9cdb;
+  color: white;
+  border-color: #2d9cdb;
+}
+
+.delivery-cta-btn.delivery-primary:hover {
+  background: #1b7dbd;
+  border-color: #1b7dbd;
+  transform: translateY(-2px);
+
+}
+
+.delivery-cta-btn.delivery-secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.delivery-cta-btn.delivery-secondary:hover {
+  background: white;
+  color: #2d9cdb;
+  transform: translateY(-2px);
+  
+}
+
+
+@media (max-width: 1024px) {
+  .delivery-hero {
+    height: 55vh;
+    min-height: 380px;
+  }
+  
+  .delivery-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .delivery-hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .delivery-hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .delivery-hero-content {
+    padding: 0 15px;
+  }
+  
+  .delivery-hero-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  
+  .delivery-hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
+  
+  .delivery-breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+  
+  .delivery-breadcrumb-separator {
+    margin: 0 6px;
+  }
+  
+  .delivery-hero-buttons {
+    gap: 16px;
+    justify-content: flex-start;
+  }
+  
+  .delivery-cta-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .delivery-hero {
+    height: 45vh;
+    min-height: 320px;
+  }
+  
+  .delivery-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .delivery-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .delivery-breadcrumb {
+    font-size: 0.85rem;
+  }
+  
+  .delivery-breadcrumb-separator {
+    margin: 0 4px;
+  }
+  
+  .delivery-hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  
+  .delivery-cta-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    min-width: 180px;
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 375px) {
+  .delivery-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .delivery-hero-content {
+    padding: 0 12px;
+  }
+  
+  .delivery-hero-title {
+    font-size: 1.6rem;
+    line-height: 1.1;
+  }
+  
+  .delivery-hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+  
+  .delivery-breadcrumb {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .delivery-cta-btn {
+    padding: 11px 20px;
+    font-size: 0.9rem;
+    min-width: 160px;
+    width: 100%;
+    max-width: 220px;
+  }
+}
