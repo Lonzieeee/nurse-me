@@ -15,6 +15,7 @@ import Login from "./pages/Sign";
 import HomeNursing from "./pages/HomeNursing";
 import DoctorHouseCalls from "./pages/DoctorHouseCalls";
 import MedicationDelivery from "./pages/MedicationDelivery";
+import PalliativeCare from "./pages/PalliativeCare";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/home-nursing" element={<HomeNursing />} />
         <Route path="/doctor-house-calls" element={<DoctorHouseCalls />} />
         <Route path="/medication-delivery" element={<MedicationDelivery />} />
+        <Route path="/palliative-care" element={<PalliativeCare />} />
       </Routes>
       <Footer />
       <BackToTop />

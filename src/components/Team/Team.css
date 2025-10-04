@@ -64,7 +64,7 @@
     display: grid;
     grid-template-columns: 112px 1fr;
     align-items: center;
-    background: linear-gradient(135deg, #2d9cdb 0%, #2d9cdb 78%, #27ae60 100%);
+    background: linear-gradient(135deg, #2d9cdb 0%, #2d9cdb 78%, #1e8bc3 100%);
    
     border-radius: 16px;
     padding: 20px 24px;

@@ -1,0 +1,298 @@
+.palliative-service-desc {
+  padding: 80px 20px;
+  background: #f9fafb;
+  font-family: inherit;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.palliative-service-desc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/palliativebackground-removebg-preview-min.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.palliative-service-desc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.palliative-service-desc-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 60px;
+  line-height: 1.2;
+}
+
+.palliative-service-desc-title .highlight {
+  color: #2d9cdb;
+}
+
+.palliative-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.palliative-benefit-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+
+  transition: transform 0.9s cubic-bezier(.22,.61,.36,1), opacity 0.9s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(45, 156, 219, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.palliative-benefit-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(45, 156, 219, 0.2);
+}
+
+.palliative-benefit-card.left {
+  transform: translateX(-64px);
+}
+
+.palliative-benefit-card.right {
+  transform: translateX(64px);
+}
+
+.palliative-benefit-card.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.palliative-benefit-card.in-view:hover {
+  transform: translateY(-8px);
+}
+
+.palliative-benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(45, 156, 219, 0.1);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.palliative-benefit-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.palliative-benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.palliative-benefit-description {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.blue-accent {
+  color: #2d9cdb;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .palliative-service-desc {
+    padding: 70px 20px;
+  }
+  
+  .palliative-service-desc::before {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .palliative-service-desc-title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+  
+  .palliative-benefits-grid {
+    gap: 25px;
+  }
+  
+  .palliative-benefit-card {
+    padding: 25px 18px;
+  }
+  
+  .palliative-benefit-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 18px;
+  }
+  
+  .palliative-benefit-icon img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .palliative-service-desc {
+    padding: 60px 15px;
+  }
+  
+  .palliative-service-desc::before {
+    width: 200px;
+    height: 200px;
+    opacity: 0.6;
+  }
+  
+  .palliative-service-desc-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .palliative-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .palliative-benefit-card {
+    padding: 20px 15px;
+  }
+  
+  .palliative-benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .palliative-benefit-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .palliative-benefit-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .palliative-benefit-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .palliative-service-desc {
+    padding: 50px 15px;
+  }
+  
+  .palliative-service-desc::before {
+    width: 150px;
+    height: 150px;
+    opacity: 0.5;
+  }
+  
+  .palliative-service-desc-title {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+  }
+  
+  .palliative-benefits-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 18px;
+  }
+  
+  .palliative-benefit-card {
+    padding: 18px 12px;
+  }
+  
+  .palliative-benefit-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 12px;
+  }
+  
+  .palliative-benefit-icon img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .palliative-benefit-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .palliative-benefit-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .palliative-service-desc {
+    padding: 45px 12px;
+  }
+  
+  .palliative-service-desc::before {
+    width: 120px;
+    height: 120px;
+    opacity: 0.4;
+  }
+  
+  .palliative-service-desc-title {
+    font-size: 1.6rem;
+  }
+  
+  .palliative-benefit-card {
+    padding: 16px 10px;
+  }
+  
+  .palliative-benefit-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .palliative-benefit-icon img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palliative-benefit-card,
+  .palliative-benefit-card.left,
+  .palliative-benefit-card.right {
+    transition: none;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

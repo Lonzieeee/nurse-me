@@ -40,7 +40,7 @@ function Services() {
       title: "Palliative Care", 
       desc: "Compassionate care focused on relieving pain, managing symptoms, and enhancing comfort for patients with serious illnesses, while supporting their families.", 
       icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/palliative-min.png",
-      link: "/services"
+      link: "/palliative-care"
     },
   ];
 
