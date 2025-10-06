@@ -1,0 +1,340 @@
+.physiotherapy-simple-steps {
+  padding: 80px 20px;
+  background: #f9fafb;
+  position: relative;
+  overflow: hidden;
+}
+
+.physiotherapy-simple-steps::before,
+.physiotherapy-simple-steps::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.physiotherapy-simple-steps::before {
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/physio.png");
+}
+
+.physiotherapy-simple-steps::after {
+  bottom: 0;
+  left: 0;
+  width: 340px;
+  height: 340px;
+  background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/therapyservice.png");
+}
+
+.physiotherapy-steps-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.physio-steps-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.physio-steps-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.physio-steps-highlight {
+  color: #2d9cdb;
+}
+
+.physio-steps-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.physio-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.physio-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+  gap: 30px;
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: var(--step-delay, 0s);
+}
+
+.physio-step-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.physio-step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 0;
+  min-width: 30px;
+  flex-shrink: 0;
+}
+
+.physio-step-icon {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #2d9cdb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  background: white;
+  flex-shrink: 0;
+}
+
+.physio-step-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.physio-step-content {
+  flex: 1;
+}
+
+.physio-step-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.physio-step-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.physio-steps-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.physio-start-btn {
+  background: #2d9cdb;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.physio-start-btn:hover {
+  transform: translateY(-2px);
+  background-color: #1e95db;
+}
+
+@media (max-width: 1024px) {
+  .physiotherapy-simple-steps {
+    padding: 60px 20px;
+  }
+  
+  .physiotherapy-simple-steps::before {
+    width: 240px;
+    height: 240px;
+    top: 0;
+    right: 0;
+  }
+  
+  .physiotherapy-simple-steps::after {
+    width: 260px;
+    height: 260px;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .physio-steps-title {
+    font-size: 2.2rem;
+  }
+  
+  .physio-steps-list {
+    max-width: 700px;
+  }
+  
+  .physio-step {
+    padding: 18px;
+    gap: 25px;
+  }
+  
+  .physio-step-icon {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .physio-step-icon img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .physiotherapy-simple-steps {
+    padding: 50px 15px;
+    overflow-x: hidden;
+  }
+  
+  .physiotherapy-simple-steps::before {
+    width: 160px;
+    height: 160px;
+    opacity: 0.12;
+  }
+  
+  .physiotherapy-simple-steps::after {
+    width: 180px;
+    height: 180px;
+    opacity: 0.12;
+  }
+  
+  .physiotherapy-steps-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .physio-steps-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .physio-steps-subtitle {
+    font-size: 1rem;
+  }
+  
+  .physio-steps-header {
+    margin-bottom: 40px;
+  }
+  
+  .physio-steps-list {
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+  
+  .physio-step {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+    gap: 20px;
+  }
+  
+  .physio-step-number {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .physio-step-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+  
+  .physio-step-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .physio-step-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .physio-step-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .physiotherapy-simple-steps {
+    padding: 40px 10px;
+  }
+  
+  .physio-steps-title {
+    font-size: 1.6rem;
+  }
+  
+  .physio-steps-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .physio-step {
+    padding: 15px 10px;
+    gap: 15px;
+  }
+  
+  .physio-step-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .physio-step-icon img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .physio-step-title {
+    font-size: 1.1rem;
+  }
+  
+  .physio-step-description {
+    font-size: 0.9rem;
+  }
+  
+  .physio-start-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+}
+
+
+.physio-step {
+  will-change: transform, opacity;
+}
+
+.physio-step-visible {
+  animation: slideInFromRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

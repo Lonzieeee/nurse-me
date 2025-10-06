@@ -1,0 +1,164 @@
+.what-we-treat {
+  padding: 80px 20px;
+  background: #f9fafb;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-we-treat::before,
+.what-we-treat::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.what-we-treat::before {
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/physio-min.png");
+}
+
+.what-we-treat::after {
+  display: none;
+}
+
+.treatment-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.treatment-container h2 {
+  font-size: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+  margin-bottom: 50px;
+  color: #2d9cdb;
+  font-weight: 700;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.treatment-card {
+  background: #fff;
+  padding: clamp(20px, 2vw, 28px);
+  border-radius: 12px;
+  transition: transform 0.9s cubic-bezier(.22,.61,.36,1), opacity 0.9s ease;
+  opacity: 0;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+  border: 1px solid rgba(45, 156, 219, 0.1);
+}
+
+.treatment-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(45, 156, 219, 0.3);
+}
+
+.treatment-icon {
+  width: clamp(56px, 6vw, 72px);
+  height: clamp(56px, 6vw, 72px);
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(45, 156, 219, 0.05);
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.treatment-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.treatment-card h3 {
+  font-size: clamp(1rem, 1rem + 0.3vw, 1.2rem);
+  color: #111;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  margin: 0;
+}
+
+.emoji {
+  font-size: 1.2em;
+  margin-left: 4px;
+}
+
+
+.treatment-card.slide-left {
+  transform: translateX(-64px);
+}
+
+.treatment-card.slide-right {
+  transform: translateX(64px);
+}
+
+.treatment-card.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+@media (max-width: 900px) {
+  .treatment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .what-we-treat::before {
+    width: 240px;
+    height: 240px;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .what-we-treat {
+    padding: 60px 15px;
+  }
+  
+  .treatment-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .treatment-card {
+    aspect-ratio: 1 / 1;
+    padding: 20px 15px;
+  }
+  
+  .what-we-treat::before {
+    width: 160px;
+    height: 160px;
+    opacity: 0.9;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .treatment-card,
+  .treatment-card.slide-left,
+  .treatment-card.slide-right {
+    transition: none;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

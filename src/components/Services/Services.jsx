@@ -22,7 +22,7 @@ function Services() {
       title: "Physiotherapy at Home", 
       desc: "Licensed physiotherapists deliver tailored exercises and therapy to improve mobility, strength, and independence", 
       icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/physical-therapy-min.png",
-      link: "/services"
+      link: "/physiotherapy"
     },
     { 
       title: "Medication Delivery", 
