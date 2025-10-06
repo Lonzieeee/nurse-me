@@ -5,7 +5,7 @@ const WhatWeTreat = () => {
   const treatments = [
     { 
       iconUrl: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/spine.png", 
-      title: "Back and neck pain",
+      title: "Pain Relief Therapy",
      
     },
     { 
@@ -14,19 +14,19 @@ const WhatWeTreat = () => {
     },
     { 
       iconUrl: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/injury.png", 
-      title: "Sports injuries"
+      title: "Sports Physiotherapy"
     },
     { 
       iconUrl: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/artificial-intelligence.png", 
-      title: "Stroke and neurological recovery"
+      title: "Neurological Physiotherapy"
     },
     { 
       iconUrl: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/joint.png", 
-      title: "Arthritis and joint stiffness"
+      title: "Joint Pain & Mobility Care"
     },
     { 
       iconUrl: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/oldcane.png", 
-      title: "Elderly mobility support"
+      title: "Geriatric (Elderly) Physiotherapy"
     },
   ];
 
@@ -55,7 +55,7 @@ const WhatWeTreat = () => {
   return (
     <section className="what-we-treat">
       <div className="treatment-container">
-        <h2>What We Treat</h2>
+        <h2>Our Services</h2>
         <div className="treatment-grid" ref={containerRef}>
           {treatments.map((treatment, index) => {
             const slideDirectionClass = index % 2 === 0 ? "slide-left" : "slide-right";

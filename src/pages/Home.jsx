@@ -17,7 +17,7 @@ function Home() {
       <Providers />
       <Trust />
       <Contact />
-      </div>
+    </div>
   );
 }
 

@@ -11,9 +11,8 @@ function PalliativeCare() {
       <PalliativeHero />
       <KeyServices />
       <WhoNeedsPalliative />
-   
       <BookingFormPalliative />
-         <FAQPalliative />
+      <FAQPalliative />
     </div>
   );
 }

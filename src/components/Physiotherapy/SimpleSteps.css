@@ -24,13 +24,7 @@
   background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/physio.png");
 }
 
-.physiotherapy-simple-steps::after {
-  bottom: 0;
-  left: 0;
-  width: 340px;
-  height: 340px;
-  background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/therapyservice.png");
-}
+
 
 .physiotherapy-steps-container {
   position: relative;

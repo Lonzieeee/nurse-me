@@ -1,0 +1,343 @@
+.physio-faq {
+  padding: 80px 20px;
+  background: #f8fafc;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.physio-faq::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url('https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/pills-removebg-preview.png');
+  background-size: 150px 100px;
+  background-position: 
+    100px 60px;
+  background-repeat: repeat;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.physio-faq::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/faq.png") center/contain no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.physio-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.physio-faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.physio-faq-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.physio-faq-header .physio-faq-highlight {
+  color: #2d9cdb;
+}
+
+.physio-faq-header p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.physio-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.physio-faq-item {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.physio-faq-item:hover {
+  border-color: #2d9cdb;
+}
+
+.physio-faq-item.physio-active {
+  border-color: #2d9cdb;
+}
+
+.physio-faq-question {
+  width: 100%;
+  padding: 24px 28px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.physio-faq-question:hover {
+  background: rgba(45, 156, 219, 0.05);
+}
+
+.physio-faq-item.physio-active .physio-faq-question {
+  background: rgba(45, 156, 219, 0.08);
+  color: #2d9cdb;
+}
+
+.physio-question-text {
+  flex: 1;
+  line-height: 1.4;
+  padding-right: 20px;
+}
+
+.physio-faq-icon {
+  color: #2d9cdb;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.physio-faq-item.physio-active .physio-faq-icon {
+  transform: rotate(180deg);
+}
+
+.physio-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.physio-faq-answer.physio-show {
+  max-height: 300px;
+}
+
+.physio-answer-content {
+  padding: 0 28px 28px 28px;
+}
+
+.physio-answer-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+.physio-faq-contact {
+  margin-top: 40px;
+}
+
+.physio-contact-card {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.physio-contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 12px;
+}
+
+.physio-contact-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.physio-contact-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.physio-contact-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.physio-contact-btn.physio-primary {
+  background: #2d9cdb;
+  color: #fff;
+}
+
+.physio-contact-btn.physio-primary:hover {
+  background: #1e7bb8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 156, 219, 0.3);
+}
+
+.physio-contact-btn.physio-secondary {
+  background: transparent;
+  color: #2d9cdb;
+  border: 2px solid #2d9cdb;
+}
+
+.physio-contact-btn.physio-secondary:hover {
+  background: #2d9cdb;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 156, 219, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .physio-faq {
+    padding: 60px 16px;
+  }
+  
+  .physio-faq::after {
+    display: none;
+  }
+  
+  .physio-faq-header h2 {
+    font-size: 2rem;
+  }
+  
+  .physio-faq-header p {
+    font-size: 1.1rem;
+  }
+  
+  .physio-faq-question {
+    padding: 20px 24px;
+    font-size: 1rem;
+  }
+  
+  .physio-answer-content {
+    padding: 0 24px 24px 24px;
+  }
+  
+  .physio-contact-card {
+    padding: 30px 20px;
+  }
+  
+  .physio-contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .physio-contact-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .physio-faq {
+    padding: 50px 12px;
+  }
+  
+  .physio-faq-header {
+    margin-bottom: 40px;
+  }
+  
+  .physio-faq-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .physio-faq-header p {
+    font-size: 1rem;
+  }
+  
+  .physio-faq-question {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .physio-question-text {
+    padding-right: 15px;
+  }
+  
+  .physio-answer-content {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .physio-answer-content p {
+    font-size: 0.95rem;
+  }
+  
+  .physio-contact-card {
+    padding: 25px 15px;
+  }
+  
+  .physio-contact-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .physio-contact-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .physio-faq-item,
+  .physio-faq-question,
+  .physio-faq-answer,
+  .physio-faq-icon,
+  .physio-contact-btn {
+    transition: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .physio-faq-item {
+    border: 3px solid #000;
+  }
+  
+  .physio-faq-item:hover,
+  .physio-faq-item.physio-active {
+    border-color: #000;
+  }
+  
+  .physio-contact-card {
+    border: 3px solid #000;
+  }
+}

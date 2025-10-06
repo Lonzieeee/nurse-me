@@ -1,116 +1,289 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithPopup,
+  updateProfile,
+  sendPasswordResetEmail,
+} from "firebase/auth";
+import { auth, googleProvider } from "../firebaseConfig";
 import "./Sign.css";
 
 export default function Sign() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isLogin = location.pathname === "/login";
-  
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
+  const [resetLoading, setResetLoading] = useState(false);
+  const [resetMessage, setResetMessage] = useState("");
+
   const formRowRef = useRef(null);
   const loginOptionsRef = useRef(null);
 
-  
   const images = [
     "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/signinimage-1-min.png",
-    "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/signin2-min.png", 
-    "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/signin3-min.png"
+    "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/signin2-min.png",
+    "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/signin3-min.png",
   ];
-
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      setCurrentImageIndex((prev) =>
+        prev === images.length - 1 ? 0 : prev + 1
       );
-    }, 4000); 
-
+    }, 4000);
     return () => clearInterval(interval);
   }, [images.length]);
 
-  
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberedEmail");
+    const savedRememberMe = localStorage.getItem("rememberMe") === "true";
+
+    if (savedEmail && savedRememberMe) {
+      setFormData((prev) => ({ ...prev, email: savedEmail }));
+      setRememberMe(true);
+    }
+  }, []);
+
   useEffect(() => {
     if (formRowRef.current && loginOptionsRef.current) {
       if (isLogin) {
-      
-        formRowRef.current.classList.add('hidden');
-        
+        formRowRef.current.classList.add("hidden");
         setTimeout(() => {
-          loginOptionsRef.current.classList.remove('hidden');
+          loginOptionsRef.current.classList.remove("hidden");
         }, 150);
       } else {
-  
-        loginOptionsRef.current.classList.add('hidden');
-        
+        loginOptionsRef.current.classList.add("hidden");
         setTimeout(() => {
-          formRowRef.current.classList.remove('hidden');
+          formRowRef.current.classList.remove("hidden");
         }, 150);
       }
     }
+
+    if (isLogin) {
+      const savedEmail = localStorage.getItem("rememberedEmail");
+      const savedRememberMe = localStorage.getItem("rememberMe") === "true";
+
+      if (savedEmail && savedRememberMe) {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: savedEmail,
+          password: "",
+        });
+        setRememberMe(true);
+      } else {
+        setFormData((prev) => ({
+          ...prev,
+          password: "",
+        }));
+      }
+    } else {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      });
+      setRememberMe(false);
+    }
   }, [isLogin]);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/home");
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setError("");
+    setLoading(true);
 
+    try {
+      if (isLogin) {
+        await signInWithEmailAndPassword(
+          auth,
+          formData.email,
+          formData.password
+        );
+
+        if (rememberMe) {
+          localStorage.setItem("rememberedEmail", formData.email);
+          localStorage.setItem("rememberMe", "true");
+        } else {
+          localStorage.removeItem("rememberedEmail");
+          localStorage.removeItem("rememberMe");
+        }
+
+        navigate("/home");
+      } else {
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          formData.email,
+          formData.password
+        );
+
+        const displayName = `${formData.firstName} ${formData.lastName}`.trim();
+        await updateProfile(userCredential.user, {
+          displayName: displayName,
+        });
+
+        navigate("/home");
+      }
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const handleGoogleSignIn = async () => {
+    setError("");
+    setLoading(true);
+
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      console.log("Google sign-in successful:", result.user);
+
+      if (!result.user.displayName && result.user.providerData[0]?.displayName) {
+        await updateProfile(result.user, {
+          displayName: result.user.providerData[0].displayName,
+        });
+      }
+
+      navigate("/home");
+    } catch (err) {
+      console.error("Google sign-in error:", err);
+      let errorMessage = err.message;
+      if (err.code === "auth/popup-closed-by-user") {
+        errorMessage = "Sign-in was cancelled.";
+      } else if (err.code === "auth/popup-blocked") {
+        errorMessage = "Popup was blocked. Please allow popups for this site.";
+      }
+      setError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    setShowResetModal(true);
+    setResetEmail(formData.email || "");
+    setResetMessage("");
+  };
+
+ 
+  const handleResetSubmit = async (e) => {
+    e.preventDefault();
+    if (!resetEmail) {
+      setResetMessage("Please enter your email address.");
+      return;
+    }
+
+    setResetLoading(true);
+    setResetMessage("");
+
+    try {
+      await sendPasswordResetEmail(auth, resetEmail);
+      setResetMessage("Password reset link sent! Check your email inbox.");
+    } catch (error) {
+      console.error(error.message);
+      setResetMessage("Error: " + error.message);
+    } finally {
+      setResetLoading(false);
+    }
+  };
+
+ 
+  const closeResetModal = () => {
+    setShowResetModal(false);
+    setResetEmail("");
+    setResetMessage("");
+    setResetLoading(false);
+  };
+
+  
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && showResetModal) {
+        closeResetModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [showResetModal]);
 
   return (
-    <div className="sign-page" style={{ paddingTop: '70px' }}>
+    <div className="sign-page" style={{ paddingTop: "70px" }}>
       <div className="sign-container">
-       
         <div className="sign-left">
           <div className="image-carousel">
             {images.map((image, index) => (
-              <div 
+              <div
                 key={index}
-                className={`carousel-image ${index === currentImageIndex ? 'active' : ''}`}
+                className={`carousel-image ${
+                  index === currentImageIndex ? "active" : ""
+                }`}
               >
-                <img src={image} alt={`Sign up image ${index + 1}`} />
+                <img src={image} alt={`Sign image ${index + 1}`} />
                 <div className="image-overlay"></div>
               </div>
             ))}
             <div className="carousel-indicators">
               {images.map((_, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
+                  className={`indicator ${
+                    index === currentImageIndex ? "active" : ""
+                  }`}
                 />
               ))}
             </div>
           </div>
         </div>
 
-      
         <div className="sign-right">
           <div className="sign-form-container">
             <div className="sign-header">
               <h1>{isLogin ? "Login to your account" : "Create an Account"}</h1>
-              <p>{isLogin ? "Welcome back! Please sign in to continue" : "Join NurseMe today and get started with professional healthcare at home"}</p>
+              <p>
+                {isLogin
+                  ? "Welcome back! Please sign in to continue"
+                  : "Join NurseMe today and get started with professional healthcare at home"}
+              </p>
             </div>
 
             <form className="sign-form" onSubmit={handleSubmit}>
-              <div 
+              <div
                 ref={formRowRef}
-                className={`form-row ${isLogin ? 'hidden' : ''}`}
+                className={`form-row ${isLogin ? "hidden" : ""}`}
               >
                 <div className="form-field">
                   <label htmlFor="firstName">First Name</label>
@@ -127,6 +300,7 @@ export default function Sign() {
                     />
                   </div>
                 </div>
+
                 <div className="form-field">
                   <label htmlFor="lastName">Last Name</label>
                   <div className="input-group">
@@ -170,7 +344,9 @@ export default function Sign() {
                     name="password"
                     value={formData.password}
                     onChange={handleInputChange}
-                    placeholder={isLogin ? "Enter your password" : "Create a password"}
+                    placeholder={
+                      isLogin ? "Enter your password" : "Create a password"
+                    }
                     required
                   />
                   <button
@@ -183,19 +359,40 @@ export default function Sign() {
                 </div>
               </div>
 
-              <div 
+              <div
                 ref={loginOptionsRef}
-                className={`login-options ${!isLogin ? 'hidden' : ''}`}
+                className={`login-options ${!isLogin ? "hidden" : ""}`}
               >
                 <label className="remember-me">
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)}
+                  />
                   <span>Remember me</span>
                 </label>
-                <a href="#" className="forgot-password">Forgot password?</a>
+                <span
+                  className="forgot-password"
+                  onClick={handlePasswordReset}
+                >
+                  Forgot password?
+                </span>
               </div>
 
-              <button type="submit" className="create-account-btn">
-                {isLogin ? "Login" : "Create Account"}
+              {error && (
+                <p style={{ color: "red", fontSize: "0.9rem" }}>{error}</p>
+              )}
+
+              <button
+                type="submit"
+                className="create-account-btn"
+                disabled={loading}
+              >
+                {loading
+                  ? "Please wait..."
+                  : isLogin
+                  ? "Login"
+                  : "Create Account"}
               </button>
             </form>
 
@@ -204,18 +401,36 @@ export default function Sign() {
             </div>
 
             <div className="social-auth">
-              <button className="social-btn google-btn">
+              <button
+                className="social-btn google-btn"
+                onClick={handleGoogleSignIn}
+                disabled={loading}
+                type="button"
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24">
-                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                  <path
+                    fill="#4285F4"
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  />
                 </svg>
-                Continue with Google
+                {loading ? "Please wait..." : "Continue with Google"}
               </button>
+
               <button className="social-btn apple-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                 </svg>
                 Continue with Apple
               </button>
@@ -223,14 +438,77 @@ export default function Sign() {
 
             <div className="sign-footer">
               {isLogin ? (
-                <p>Don't have an account? <a href="/signin">Create one</a></p>
+                <p>
+                  Don’t have an account? <a href="/signin">Create one</a>
+                </p>
               ) : (
-                <p>Already have an account? <a href="/login">Sign in</a></p>
+                <p>
+                  Already have an account? <a href="/login">Sign in</a>
+                </p>
               )}
             </div>
           </div>
         </div>
       </div>
+
+    
+      {showResetModal && (
+        <div className="modal-overlay" onClick={closeResetModal}>
+          <div className="reset-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Reset Password</h2>
+              <button className="close-btn" onClick={closeResetModal}>
+                ×
+              </button>
+            </div>
+            
+            <div className="modal-body">
+              <p>Enter your email address and we'll send you a link to reset your password.</p>
+              
+              <form onSubmit={handleResetSubmit}>
+                <div className="form-field">
+                  <label htmlFor="resetEmail">Email Address</label>
+                  <div className="input-group">
+                    <Mail size={20} className="input-icon" />
+                    <input
+                      type="email"
+                      id="resetEmail"
+                      value={resetEmail}
+                      onChange={(e) => setResetEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {resetMessage && (
+                  <div className={`reset-message ${resetMessage.includes('Error') ? 'error' : 'success'}`}>
+                    {resetMessage}
+                  </div>
+                )}
+
+                <div className="modal-actions">
+                  <button 
+                    type="button" 
+                    className="cancel-btn" 
+                    onClick={closeResetModal}
+                    disabled={resetLoading}
+                  >
+                    Cancel
+                  </button>
+                  <button 
+                    type="submit" 
+                    className="reset-btn" 
+                    disabled={resetLoading}
+                  >
+                    {resetLoading ? "Sending..." : "Send Reset Link"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

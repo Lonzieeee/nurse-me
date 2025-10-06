@@ -5,6 +5,7 @@
   font-family: inherit;
   position: relative;
   min-height: 90vh;
+  overflow-x: hidden;
 }
 
 .medication-services::before {

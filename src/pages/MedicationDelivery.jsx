@@ -8,11 +8,10 @@ function MedicationDelivery() {
   return (
     <div style={{ paddingTop: '70px' }}>
       <DeliveryHero />
-      
       <MedicationProcess />
       <MedicationServices />
-        <MedicationOrder />
-        <FAQDelivery />
+      <MedicationOrder />
+      <FAQDelivery />
     </div>
   );
 }
