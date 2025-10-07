@@ -13,6 +13,7 @@ const SEO = ({
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const ogTitleFull = ogTitle || fullTitle;
   const ogDescriptionFull = ogDescription || description;
+  const alternateUrl = canonical?.replace('https://nurseme.com', 'https://nurseme.magical.africa');
 
   return (
     <Helmet>
@@ -35,6 +36,7 @@ const SEO = ({
       
   
       {canonical && <link rel="canonical" href={canonical} />}
+      {alternateUrl && <link rel="alternate" href={alternateUrl} />}
     </Helmet>
   );
 };
