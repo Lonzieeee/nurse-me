@@ -1,10 +1,17 @@
 import React from "react";
 import { MapPin, Phone, Mail, Globe } from "lucide-react";
 import "./Contact.css";
+import SEO from "../components/SEO";
 
 export default function ContactPage() {
   return (
     <div style={{ paddingTop: '70px' }}>
+      <SEO 
+        title="Contact Us - Get in Touch with NurseMe"
+        description="Have questions about our healthcare services? Contact NurseMe for inquiries about home nursing, doctor visits, or any healthcare needs. We're here to help."
+        keywords="contact NurseMe, healthcare inquiries, customer support, get in touch, healthcare questions"
+        canonical="https://nurseme.com/contact"
+      />
       <section className="contact-page">
         <div className="contact-hero">
           <div className="hero-overlay"></div>

@@ -10,6 +10,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import { auth, googleProvider } from "../firebaseConfig";
+import SEO from "../components/SEO";
 import "./Sign.css";
 
 export default function Sign() {
@@ -242,6 +243,18 @@ export default function Sign() {
 
   return (
     <div className="sign-page" style={{ paddingTop: "70px" }}>
+      <SEO 
+        title={isLogin ? "Sign In - Access Your Account" : "Sign Up - Create Your Account"}
+        description={isLogin 
+          ? "Sign in to your NurseMe account to book healthcare services, manage appointments, and access your healthcare history." 
+          : "Create your NurseMe account to access professional healthcare services at home. Quick and secure registration."
+        }
+        keywords={isLogin 
+          ? "sign in, login, account access, user login, member login" 
+          : "sign up, register, create account, new account, join NurseMe"
+        }
+        canonical={isLogin ? "https://nurseme.com/login" : "https://nurseme.com/signin"}
+      />
       <div className="sign-container">
         <div className="sign-left">
           <div className="image-carousel">
