@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const StructuredData = ({ type = 'organization' }) => {
-  // Organization Schema - Shows up when people search for your brand
+  
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
@@ -16,10 +16,10 @@ const StructuredData = ({ type = 'organization' }) => {
       "availableLanguage": "English"
     },
     "sameAs": [
-      // Add your social media links here when you have them
-      // "https://www.facebook.com/nurseme",
-      // "https://twitter.com/nurseme",
-      // "https://www.linkedin.com/company/nurseme"
+      
+      "https://www.facebook.com/nurseme",
+      "https://twitter.com/nurseme",
+  
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -69,7 +69,7 @@ const StructuredData = ({ type = 'organization' }) => {
     }
   };
 
-  // Website Schema - Helps with sitelinks
+  
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -85,7 +85,7 @@ const StructuredData = ({ type = 'organization' }) => {
     }
   };
 
-  // Breadcrumb Schema - Helps Google understand site structure
+  
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

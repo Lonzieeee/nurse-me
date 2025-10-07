@@ -5,5 +5,5 @@ Allow: /
 # Sitemap location
 Sitemap: https://nurseme.com/sitemap.xml
 
-# Optional: Crawl-delay (uncomment if needed)
+# Optional: Crawl-delay 
 # Crawl-delay: 1
