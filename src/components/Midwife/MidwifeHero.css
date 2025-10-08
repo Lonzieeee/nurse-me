@@ -1,0 +1,175 @@
+.midwife-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 400px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/midwife-hero-min.png")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px; 
+}
+
+.midwife-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.midwife-hero-content {
+  text-align: left;
+  color: #fff;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+
+.midwife-hero-breadcrumb {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.midwife-hero-breadcrumb-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.midwife-hero-breadcrumb-link:hover {
+  color: #2d9cdb;
+}
+
+.midwife-hero-breadcrumb-services {
+  color: #e2e8f0;
+  pointer-events: none;
+  cursor: default;
+}
+
+.midwife-hero-breadcrumb-current {
+  color: #2d9cdb;
+  font-weight: 500;
+}
+
+.midwife-hero-breadcrumb-separator {
+  color: #94a3b8;
+  margin: 0 8px;
+}
+
+
+.midwife-hero-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.midwife-hero-highlight-blue {
+  color: #2d9cdb;
+  position: relative;
+}
+
+
+.midwife-hero-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #e2e8f0;
+  max-width: 600px;
+}
+
+
+.midwife-hero-cta-button {
+  display: inline-block;
+  background: #2d9cdb;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+}
+
+.midwife-hero-cta-button:hover {
+  background: linear-gradient(135deg, #1e7bb8, #155a85);
+  transform: translateY(-2px);
+  color: #fff;
+  
+}
+
+.midwife-hero-cta-button:active {
+  transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  .midwife-hero {
+    height: 50vh;
+    min-height: 350px;
+    margin-top: 60px;
+  }
+  
+  .midwife-hero-content {
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  .midwife-hero-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+  
+  .midwife-hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    max-width: 100%;
+  }
+  
+  .midwife-hero-breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .midwife-hero-cta-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .midwife-hero {
+    height: 45vh;
+    min-height: 320px;
+  }
+  
+  .midwife-hero-title {
+    font-size: 1.4rem;
+  }
+  
+  .midwife-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .midwife-hero-breadcrumb-separator {
+    margin: 0 6px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .midwife-hero-title {
+    font-size: 3.2rem;
+  }
+  
+  .midwife-hero-subtitle {
+    font-size: 1.4rem;
+  }
+}

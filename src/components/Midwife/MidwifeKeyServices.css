@@ -1,0 +1,319 @@
+.midwife-service-desc {
+  padding: 80px 20px;
+  background: #f9fafb;
+  font-family: inherit;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.midwife-service-desc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/maternitytopright-min.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.midwife-service-desc::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  background-image: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/maternalnutrition-removebg-preview-min.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.midwife-service-desc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.midwife-service-desc-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 60px;
+  line-height: 1.2;
+}
+
+.midwife-service-desc-title .midwife-highlight {
+  color: #2d9cdb;
+}
+
+.midwife-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.midwife-benefit-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 35px 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  max-width: 320px;
+  min-height: 280px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  aspect-ratio: 1.1/1;
+}
+
+.midwife-benefit-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.midwife-benefit-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #2d9cdb;
+}
+
+.midwife-benefit-card.left {
+  animation-delay: 0.1s;
+}
+
+.midwife-benefit-card.right {
+  animation-delay: 0.2s;
+}
+
+.midwife-benefit-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.midwife-benefit-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.midwife-benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.midwife-blue-accent {
+  color: #2d9cdb;
+  font-weight: 700;
+}
+
+.midwife-benefit-description {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+@media (max-width: 1024px) {
+  .midwife-benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .midwife-benefit-card {
+    max-width: 300px;
+    min-height: 260px;
+  }
+  
+  .midwife-service-desc::before {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .midwife-service-desc::after {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* iPad and Tablet specific (834px - common iPad width) */
+@media (max-width: 834px) {
+  .midwife-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .midwife-benefit-card {
+    max-width: 320px;
+    min-height: 280px;
+    padding: 30px 25px;
+  }
+  
+  .midwife-service-desc {
+    padding: 70px 20px;
+  }
+  
+  .midwife-service-desc-title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .midwife-service-desc {
+    padding: 60px 15px;
+  }
+  
+  .midwife-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .midwife-service-desc-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .midwife-benefit-card {
+    padding: 30px 25px;
+    max-width: none;
+    min-height: 260px;
+  }
+  
+  .midwife-service-desc::before {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .midwife-service-desc::after {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .midwife-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .midwife-service-desc-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+  
+  .midwife-benefit-card {
+    padding: 20px 18px;
+    min-height: 250px;
+    max-width: 320px;
+    aspect-ratio: 1/1;
+  }
+  
+  .midwife-benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .midwife-benefit-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .midwife-benefit-title {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+  
+  .midwife-benefit-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .midwife-service-desc::before {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .midwife-service-desc::after {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.midwife-benefit-card.in-view {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+
+.midwife-benefit-card:hover .midwife-benefit-icon {
+  transform: scale(1.1);
+}
+
+.midwife-benefit-card:hover .midwife-benefit-title {
+  color: #2d9cdb;
+}
+
+
+@media (min-width: 1200px) {
+  .midwife-service-desc-title {
+    font-size: 2.8rem;
+  }
+  
+  .midwife-benefit-card {
+    padding: 40px 30px;
+    min-height: 300px;
+  }
+  
+  .midwife-service-desc::before {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .midwife-service-desc::after {
+    width: 300px;
+    height: 300px;
+  }
+}

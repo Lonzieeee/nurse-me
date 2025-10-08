@@ -32,7 +32,7 @@ function Footer() {
               <li><Link to="/services">Home Nursing</Link></li>
               <li><Link to="/services">Elderly Care</Link></li>
               <li><Link to="/services">Post-Surgery Care</Link></li>
-              <li><Link to="/services">Chronic Disease Management</Link></li>
+              <li><Link to="/midwife-services">Midwife Services</Link></li>
             </ul>
           </div>
 

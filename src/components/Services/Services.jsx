@@ -31,10 +31,10 @@ function Services() {
       link: "/medication-delivery"
     },
     { 
-      title: "Chronic Disease Management", 
-      desc: "Comprehensive support for conditions like diabetes, hypertension, and heart disease through regular monitoring, medication management, and personalized care plans.", 
-      icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/chronic-disease-min.png",
-      link: "/services"
+      title: "Midwife Services", 
+      desc: "Professional midwifery care supporting expectant mothers throughout pregnancy, childbirth, and postpartum recovery in the comfort of your home.", 
+      icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/midwife%20services.png",
+      link: "/midwife-services"
     },
     { 
       title: "Palliative Care", 

@@ -64,6 +64,14 @@ const StructuredData = ({ type = 'organization' }) => {
             "name": "Physiotherapy",
             "description": "Professional physical therapy at home"
           }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalProcedure",
+            "name": "Midwife Services",
+            "description": "Professional midwifery care supporting expectant mothers throughout pregnancy, childbirth, and postpartum recovery"
+          }
         }
       ]
     }
