@@ -7,7 +7,7 @@ import SEO from "../components/SEO";
 
 function MedicationDelivery() {
   return (
-    <div style={{ paddingTop: '70px' }}>
+    <div style={{ paddingTop: '0px' }}>
       <SEO 
         title="Medication Delivery - Prescription Medicines at Your Doorstep"
         description="Fast and reliable medication delivery service. Get your prescription medicines delivered safely to your home. Track your order and enjoy hassle-free pharmaceutical delivery."

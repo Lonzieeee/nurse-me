@@ -8,7 +8,7 @@ import SEO from "../components/SEO";
 
 function HomeNursing() {
   return (
-    <div style={{ paddingTop: '70px' }}>
+    <div style={{ paddingTop: '0px' }}>
       <SEO 
         title="Home Nursing Services - Professional Nurses at Your Home"
         description="Professional home nursing services tailored to your needs. Get qualified nurses for wound care, medication management, post-surgery care, and more. Book your visit today."

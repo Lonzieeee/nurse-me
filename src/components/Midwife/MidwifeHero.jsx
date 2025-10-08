@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import './MidwifeHero.css';
 
 function MidwifeHero() {
+  const scrollToBookingForm = (e) => {
+    e.preventDefault();
+    const bookingSection = document.querySelector('.midwife-booking-form-page');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="midwife-hero">
       <div className="midwife-hero-overlay">
@@ -27,9 +38,12 @@ function MidwifeHero() {
           </p>
           
          
-          <Link to="/services/book" className="midwife-hero-cta-button">
+          <button 
+            onClick={scrollToBookingForm} 
+            className="midwife-hero-cta-button"
+          >
             Book a Midwife
-          </Link>
+          </button>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import SEO from "../components/SEO";
 
 function ServicesPage() {
   return (
-    <div className="services-page" style={{ paddingTop: '70px' }}>
+    <div className="services-page" style={{ paddingTop: '0px' }}>
       <SEO 
         title="Our Healthcare Services"
         description="Explore our comprehensive range of healthcare services including home nursing, doctor house calls, medication delivery, palliative care, and physiotherapy. Quality healthcare delivered to your home."

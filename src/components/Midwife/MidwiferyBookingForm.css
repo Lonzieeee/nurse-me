@@ -1,0 +1,509 @@
+.midwife-booking-form-page {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e5f4fd 100%);
+  min-height: 100vh;
+}
+
+.midwife-booking-form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.midwife-booking-form-header {
+  background: transparent;
+  color: #374151;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.midwife-booking-form-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.midwife-blue-text {
+  color: #2d9cdb;
+}
+
+.midwife-booking-form-header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.midwife-booking-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.midwife-form-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(45, 156, 219, 0.08);
+  border: 1px solid rgba(45, 156, 219, 0.1);
+  transition: all 0.3s ease;
+}
+
+.midwife-form-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(45, 156, 219, 0.12);
+}
+
+.midwife-form-section.full-width {
+  grid-column: 1 / -1;
+}
+
+.midwife-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(45, 156, 219, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #2d9cdb;
+}
+
+.midwife-section-icon {
+  color: #2d9cdb;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.midwife-section-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin: 0 0 5px 0;
+  line-height: 1.3;
+}
+
+.midwife-section-header p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.midwife-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.midwife-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.midwife-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.midwife-form-group label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.midwife-form-group input,
+.midwife-form-group select,
+.midwife-form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.midwife-form-group input:focus,
+.midwife-form-group select:focus,
+.midwife-form-group textarea:focus {
+  outline: none;
+  border-color: #2d9cdb;
+  box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.1);
+}
+
+.midwife-form-group input.error,
+.midwife-form-group select.error,
+.midwife-form-group textarea.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.midwife-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.midwife-error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.midwife-checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.midwife-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.midwife-checkbox-item:hover {
+  border-color: #2d9cdb;
+  background: rgba(45, 156, 219, 0.02);
+}
+
+.midwife-checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #2d9cdb;
+}
+
+.midwife-checkbox-item label {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.midwife-file-upload-area {
+  position: relative;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.midwife-file-upload-area:hover {
+  border-color: #2d9cdb;
+  background: rgba(45, 156, 219, 0.02);
+}
+
+.midwife-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.midwife-file-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.midwife-upload-icon {
+  color: #2d9cdb;
+}
+
+.midwife-file-upload-content p {
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.midwife-file-upload-content span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.midwife-uploaded-file {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 6px;
+  color: #0369a1;
+  font-weight: 500;
+}
+
+.midwife-form-submit {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 20px;
+  padding: 30px 20px;
+}
+
+.midwife-submit-btn {
+  display: inline-block;
+  background: #2d9cdb;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.midwife-submit-btn:hover {
+  background: linear-gradient(135deg, #1e7bb8, #155a85);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.midwife-submit-btn:active {
+  transform: translateY(0);
+}
+
+.midwife-submit-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+
+@media (min-width: 1200px) {
+  .midwife-booking-form-container {
+    max-width: 1300px;
+  }
+  
+  .midwife-booking-form {
+    gap: 35px;
+    padding: 0 30px;
+  }
+  
+  .midwife-form-section {
+    padding: 35px;
+  }
+  
+  .midwife-booking-form-header h2 {
+    font-size: 3rem;
+  }
+  
+  .midwife-booking-form-header p {
+    font-size: 1.2rem;
+  }
+  
+  .midwife-submit-btn {
+    padding: 16px 32px;
+    font-size: 1.15rem;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .midwife-booking-form-container {
+    max-width: 1000px;
+  }
+  
+  .midwife-booking-form {
+    gap: 25px;
+    padding: 0 15px;
+  }
+  
+  .midwife-form-section {
+    padding: 25px;
+  }
+  
+  .midwife-submit-btn {
+    padding: 14px 28px;
+    font-size: 1.05rem;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .midwife-booking-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .midwife-form-section {
+    padding: 25px 20px;
+  }
+  
+  .midwife-submit-btn {
+    padding: 13px 26px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .midwife-booking-form-page {
+    padding: 40px 15px;
+  }
+
+  .midwife-booking-form-container {
+    max-width: 100%;
+  }
+
+  .midwife-booking-form-header {
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+  }
+
+  .midwife-booking-form-header h2 {
+    font-size: 2rem;
+  }
+
+  .midwife-booking-form {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 10px;
+  }
+
+  .midwife-form-section {
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .midwife-form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .midwife-section-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+  }
+
+  .midwife-section-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .midwife-section-header p {
+    font-size: 0.9rem;
+  }
+
+  .midwife-checkbox-group {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .midwife-file-upload-area {
+    padding: 20px;
+  }
+
+  .midwife-submit-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .midwife-form-submit {
+    padding: 25px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .midwife-booking-form-page {
+    padding: 20px 10px;
+  }
+
+  .midwife-booking-form-container {
+    max-width: 100%;
+  }
+
+  .midwife-booking-form-header {
+    padding: 25px 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+  }
+
+  .midwife-booking-form-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .midwife-booking-form-header p {
+    font-size: 1rem;
+  }
+
+  .midwife-booking-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 5px;
+  }
+
+  .midwife-form-section {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  .midwife-section-header {
+    padding: 12px;
+  }
+
+  .midwife-section-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .midwife-section-header p {
+    font-size: 0.9rem;
+  }
+
+  .midwife-form-group input,
+  .midwife-form-group select,
+  .midwife-form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .midwife-checkbox-item {
+    padding: 10px;
+  }
+
+  .midwife-checkbox-item label {
+    font-size: 0.9rem;
+  }
+
+  .midwife-file-upload-area {
+    padding: 15px;
+  }
+
+  .midwife-submit-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .midwife-form-submit {
+    padding: 20px 10px;
+  }
+}

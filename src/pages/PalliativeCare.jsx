@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 
 function PalliativeCare() {
   return (
-    <div style={{ paddingTop: '70px' }}>
+    <div style={{ paddingTop: '0px' }}>
       <SEO 
         title="Palliative Care - Comfort and Support at Home"
         description="Compassionate palliative care services at home. Expert pain management, symptom relief, and emotional support for patients with serious illnesses. Quality end-of-life care."

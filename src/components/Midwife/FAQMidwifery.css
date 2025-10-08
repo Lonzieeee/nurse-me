@@ -1,0 +1,290 @@
+.midwife-faq {
+  padding: 80px 20px;
+  background: #fff;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.midwife-faq::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/faq.png") center/contain no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.midwife-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.midwife-faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.midwife-faq-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.midwife-faq-header p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.midwife-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.midwife-faq-item {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.midwife-faq-item:hover {
+  border-color: #2d9cdb;
+}
+
+.midwife-faq-item.active {
+  border-color: #2d9cdb;
+}
+
+.midwife-faq-question {
+  width: 100%;
+  padding: 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.midwife-faq-question:hover {
+  background: rgba(45, 156, 219, 0.05);
+}
+
+.midwife-faq-item.active .midwife-faq-question {
+  background: rgba(45, 156, 219, 0.08);
+}
+
+.midwife-question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.midwife-faq-icon {
+  color: #2d9cdb;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.midwife-faq-item.active .midwife-faq-icon {
+  transform: rotate(180deg);
+}
+
+.midwife-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.midwife-faq-answer.open {
+  max-height: 500px;
+}
+
+.midwife-answer-content {
+  padding: 0 24px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.midwife-answer-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 16px 0 0;
+}
+
+.midwife-faq-contact {
+  margin-top: 40px;
+}
+
+.midwife-contact-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.midwife-contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d9cdb;
+  margin-bottom: 12px;
+}
+
+.midwife-contact-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.midwife-contact-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.midwife-contact-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+}
+
+.midwife-contact-btn.primary {
+  background: #2d9cdb;
+  color: #fff;
+  border-color: #2d9cdb;
+}
+
+.midwife-contact-btn.primary:hover {
+  background: #1e7bb8;
+  border-color: #1e7bb8;
+  transform: translateY(-2px);
+}
+
+.midwife-contact-btn.secondary {
+  background: transparent;
+  color: #2d9cdb;
+  border-color: #2d9cdb;
+}
+
+.midwife-contact-btn.secondary:hover {
+  background: #2d9cdb;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .midwife-faq {
+    padding: 60px 15px;
+  }
+
+  .midwife-faq::after {
+    display: none;
+  }
+
+  .midwife-faq-header h2 {
+    font-size: 2rem;
+  }
+
+  .midwife-faq-header p {
+    font-size: 1rem;
+  }
+
+  .midwife-faq-question {
+    padding: 20px;
+  }
+
+  .midwife-question-text {
+    font-size: 1rem;
+  }
+
+  .midwife-answer-content {
+    padding: 0 20px 20px;
+  }
+
+  .midwife-contact-card {
+    padding: 30px 20px;
+  }
+
+  .midwife-contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .midwife-contact-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .midwife-faq {
+    padding: 40px 10px;
+  }
+
+  .midwife-faq-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .midwife-faq-header p {
+    font-size: 0.9rem;
+  }
+
+  .midwife-faq-question {
+    padding: 16px;
+  }
+
+  .midwife-question-text {
+    font-size: 0.95rem;
+  }
+
+  .midwife-answer-content {
+    padding: 0 16px 16px;
+  }
+
+  .midwife-answer-content p {
+    font-size: 0.9rem;
+  }
+
+  .midwife-contact-card {
+    padding: 25px 15px;
+  }
+
+  .midwife-contact-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .midwife-contact-card p {
+    font-size: 0.9rem;
+  }
+}

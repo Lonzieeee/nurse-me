@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 
 function DoctorHouseCalls() {
   return (
-    <div className="doctor-house-calls-page" style={{ paddingTop: '70px' }}>
+    <div className="doctor-house-calls-page" style={{ paddingTop: '0px' }}>
       <SEO 
         title="Doctor House Calls - Medical Care at Your Home"
         description="Get professional medical consultations at home with qualified doctors. From routine check-ups to urgent care, our doctors come to you. Book a house call today."

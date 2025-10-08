@@ -7,7 +7,7 @@ import SEO from "../components/SEO";
 
 export default function BookVisit() {
   return (
-    <div style={{ paddingTop: '70px' }}>
+    <div style={{ paddingTop: '0px' }}>
       <SEO 
         title="Book a Visit - Schedule Healthcare Services"
         description="Book your home healthcare visit today. Choose from nursing care, doctor consultations, physiotherapy, or medication delivery. Easy online booking available 24/7."

@@ -45,7 +45,7 @@ function Navbar() {
     };
   }, [isUserMenuOpen]);
 
-  // Get user's initials for avatar
+
   const getUserInitials = (name) => {
     if (!name) return 'U';
     const names = name.split(' ');
@@ -127,7 +127,7 @@ function Navbar() {
                   onMouseEnter={() => setIsServicesOpen(true)} 
                   onMouseLeave={() => setIsServicesOpen(false)}>
                 <button
-                  className={`nav-link dropdown-toggle ${isActive("/services") || isActive("/home-nursing") || isActive("/doctor-house-calls") || isActive("/physiotherapy") || isActive("/medication-delivery") || isActive("/palliative-care") ? "active" : ""}`}
+                  className={`nav-link dropdown-toggle ${isActive("/services") || isActive("/home-nursing") || isActive("/midwife") || isActive("/doctor-house-calls") || isActive("/physiotherapy") || isActive("/medication-delivery") || isActive("/palliative-care") ? "active" : ""}`}
                   aria-haspopup="true"
                   aria-expanded={isServicesOpen}
                   onClick={(e) => {
@@ -147,6 +147,11 @@ function Navbar() {
                   <li role="none">
                     <Link role="menuitem" to="/home-nursing" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
                       Home Nursing Care
+                    </Link>
+                  </li>
+                  <li role="none">
+                    <Link role="menuitem" to="/midwife" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
+                      Midwife Services
                     </Link>
                   </li>
                   <li role="none">

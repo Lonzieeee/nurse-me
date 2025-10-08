@@ -5,7 +5,7 @@ import SEO from "../components/SEO";
 
 export default function ContactPage() {
   return (
-    <div style={{ paddingTop: '70px' }}>
+    <div style={{ paddingTop: '0px' }}>
       <SEO 
         title="Contact Us - Get in Touch with NurseMe"
         description="Have questions about our healthcare services? Contact NurseMe for inquiries about home nursing, doctor visits, or any healthcare needs. We're here to help."
@@ -22,6 +22,7 @@ export default function ContactPage() {
           />
           <div className="hero-content">
             <h1>CONTACT US</h1>
+            
           </div>
         </div>
       <div className="contact-wrapper">

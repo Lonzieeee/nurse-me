@@ -8,7 +8,7 @@ import SEO from "../components/SEO";
 
 const AboutPage = () => {
   return (
-    <div style={{ paddingTop: '70px' }}>
+    <div style={{ paddingTop: '0px' }}>
       <SEO 
         title="About Us - Our Story and Mission"
         description="Learn about NurseMe's mission to bring professional healthcare to your home. Discover our story, meet our team, and see the impact we're making in healthcare delivery."

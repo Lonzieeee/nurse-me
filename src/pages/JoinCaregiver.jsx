@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 
 export default function JoinCaregiver() {
   return (
-    <div style={{ paddingTop: '70px' }}>
+    <div style={{ paddingTop: '0px' }}>
       <SEO 
         title="Join Our Team - Careers for Healthcare Professionals"
         description="Join the NurseMe team! We're looking for dedicated healthcare professionals including nurses, doctors, physiotherapists, and caregivers. Flexible schedules and competitive compensation."

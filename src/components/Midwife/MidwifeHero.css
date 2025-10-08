@@ -93,8 +93,10 @@
   text-decoration: none;
   padding: 15px 30px;
   border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
   transition: all 0.3s ease;
-
 }
 
 .midwife-hero-cta-button:hover {
