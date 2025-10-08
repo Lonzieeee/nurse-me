@@ -91,7 +91,6 @@ const Audience = () => {
             <li>Flexible scheduling</li>
             <li>Family updates and support</li>
           </ul>
-          <a className="audience-btn" href="#contact">Learn More</a>
 
           <img
             className="audience-hero-img"

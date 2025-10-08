@@ -56,7 +56,7 @@ export default function Trust() {
   return (
     <section className="trust" ref={sectionRef}>
       <div className="trust-container">
-        <h2 className="trust-title">Why Trust Nurse Me?</h2>
+        <h2 className="trust-title"><span className="trust-highlight">WHY TRUST</span> Nurse Me?</h2>
         <div className="trust-timeline">
           {trustPoints.map((point, index) => (
             <div 

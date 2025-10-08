@@ -1,0 +1,195 @@
+
+.kenya-stats-section {
+  background: #ffffff;
+  padding: 4rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  
+}
+
+.kenya-stats-wrapper {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.kenya-stats-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.kenya-stats-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #2d9cdb;
+  margin: 0 auto 1rem;
+}
+
+.kenya-stats-header h3 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.challenge-highlight {
+  color: #2d9cdb;
+}
+
+.kenya-stats-intro {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.kenya-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.kenya-stat-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.6s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateX(0);
+  aspect-ratio: 1.2 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.kenya-stat-card.slide-in-left {
+  transform: translateX(-100px);
+}
+
+.kenya-stat-card.slide-in-right {
+  transform: translateX(100px);
+}
+
+.kenya-stat-card.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.kenya-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: #2d9cdb;
+}
+
+.kenya-stat-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.kenya-stat-card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #2d9cdb;
+}
+
+.kenya-stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.kenya-stat-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.kenya-stat-context {
+  font-size: 0.7rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Responsive Design for Kenya Stats Section */
+@media (max-width: 1024px) {
+  .kenya-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .kenya-stat-card {
+    padding: 2rem 1rem;
+    aspect-ratio: 1.1 / 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .kenya-stats-section {
+    padding: 3rem 1rem;
+  }
+  
+  .kenya-stats-header h3 {
+    font-size: 1.875rem;
+  }
+  
+  .kenya-stats-intro {
+    font-size: 1rem;
+  }
+  
+  .kenya-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .kenya-stat-card {
+    padding: 1.5rem 1rem;
+    aspect-ratio: 1 / 1;
+  }
+  
+  .kenya-stat-number {
+    font-size: 2rem;
+  }
+  
+  .kenya-impact-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .kenya-impact-content h4 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kenya-stats-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .kenya-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .kenya-stat-card {
+    aspect-ratio: auto;
+    padding: 1.5rem;
+  }
+  
+  .kenya-stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .kenya-stat-label {
+    font-size: 1rem;
+  }
+}

@@ -17,6 +17,10 @@
   margin-bottom: 1rem;
 }
 
+.providers-highlight {
+  color: #2d9cdb;
+}
+
 .providers-intro {
   max-width: 700px;
   margin: 0 auto 4rem;

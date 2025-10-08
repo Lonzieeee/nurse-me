@@ -5,6 +5,17 @@ import { useEffect, useRef } from "react";
 function Services() {
   const containerRef = useRef(null);
 
+  
+  const spanFirstLetters = (text) => {
+    return text.split(' ').map((word, index) => (
+      <span key={index}>
+        <span className="first-letter">{word.charAt(0)}</span>
+        {word.slice(1)}
+        {index < text.split(' ').length - 1 ? ' ' : ''}
+      </span>
+    ));
+  };
+
   const services = [
     { 
       title: "Home Nursing Care", 
@@ -69,7 +80,7 @@ function Services() {
   return (
     <section className="services">
       <div className="services-container" ref={containerRef}>
-        <h2 className="services-title">Our Services</h2>
+        <h2 className="services-title">Our <span className="services-highlight">Services</span></h2>
         <div className="services-grid">
           {services.map((service, index) => (
             <div
@@ -78,7 +89,7 @@ function Services() {
               style={{ transitionDelay: `${index * 0.14}s` }}
             >
               <img src={service.icon} alt={service.title} className="service-icon" />
-              <h3>{service.title}</h3>
+              <h3>{spanFirstLetters(service.title)}</h3>
               <p>{service.desc}</p>
               <Link to={service.link} className="learn-more-btn">
                 Learn More

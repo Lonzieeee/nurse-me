@@ -1,12 +1,14 @@
 
 
 .mission-container {
-    min-height: 100vh;
-    background-color: #f9fafb;
+    min-height: 80vh;
+    /* background-color: #f9fafb; */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    padding-top: 20rem;
+    padding-bottom: 5rem;
     margin-top: -10%
   }
   

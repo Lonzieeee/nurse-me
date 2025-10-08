@@ -11,9 +11,13 @@
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0.2px;
-    color: #2d9cdb;
+    color: #000000;
     margin: 0 auto 16px auto;
     max-width: 920px;
+  }
+
+  .supporting-goals-highlight {
+    color: #2d9cdb;
   }
   
   .impact-description {
@@ -198,7 +202,7 @@
   }
   
   .impact-cta {
-    margin-top: 30px;
+    margin-top: 60px;
   }
   
   .cta-btn {
@@ -212,7 +216,7 @@
     background: transparent;
     color: #333 !important;
     border: 2px solid #27ae60;
-    margin-top: 5%;
+    margin-top: 8%;
   }
   
   .cta-btn:hover {

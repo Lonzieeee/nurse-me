@@ -78,7 +78,7 @@ export default function Providers() {
 
   return (
     <section className="providers-section">
-      <h2 className="providers-title">Our Service Providers</h2>
+      <h2 className="providers-title">Our <span className="providers-highlight">Service Providers</span></h2>
       <p className="providers-intro">
         Nurse Me partners with trusted healthcare professionals to deliver quality home-based care. Join our team of heroes:
       </p>

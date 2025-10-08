@@ -10,6 +10,7 @@
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
     position: relative;
     overflow: hidden;
+    ;
    
   }
   
@@ -45,21 +46,21 @@
     border-radius: 999px;
     font-weight: 600;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 2px solid rgba(0,0,0,0.9);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.8)!important;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    /* background: #0f172a; */
     background: transparent;
     color: #fff;
-   
   }
   
   .contact-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
-    color: #fff;
+    color: #2d9cdb;
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 1);
   }
 
   
@@ -92,6 +93,12 @@
     .contact-title { font-size: 1.8rem; }
     .contact-subtitle { font-size: 0.95rem; }
     .contact-cta { gap: 12px; }
-    .contact-btn { padding: 12px 18px; }
+    .contact-btn { 
+      padding: 12px 18px;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+    }
+    .contact-btn:hover {
+      border-color: rgba(255, 255, 255, 1);
+    }
   }
   

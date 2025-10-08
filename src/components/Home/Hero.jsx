@@ -67,7 +67,7 @@ function Hero() {
 
     
       <div className="hero-content">
-        <h1>Compassionate Care at Home</h1>
+        <h1>Compassionate <span className="care-highlight">Care at Home</span></h1>
         <p>
           Affordable, accessible, and professional healthcare services delivered
           to your doorstep.

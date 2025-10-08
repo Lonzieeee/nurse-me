@@ -54,6 +54,10 @@
     color: #213547;
     font-weight: 800;
   }
+
+  .services-highlight {
+    color: #2d9cdb;
+  }
   
  
   .services-grid {
@@ -113,6 +117,11 @@
     margin-bottom: 10px;
     color: #0f172a;
     font-weight: 700;
+  }
+
+  .first-letter {
+    color: #2d9cdb;
+    font-weight: 800;
   }
   
   .service-card p {

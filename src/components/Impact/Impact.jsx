@@ -30,7 +30,7 @@ const Impact = () => {
 
   return (
     <section ref={sectionRef} className="impact-section">
-      <h2 className="impact-title"> Our Impact: Healing at Home, Supporting Global Goals</h2>
+      <h2 className="impact-title">Our Impact: Healing at Home, <span className="supporting-goals-highlight">Supporting Global Goals</span></h2>
       <p className="impact-description">
       Our mission at Nurseme aligns with the United Nations Sustainable Development Goals, creating better health outcomes in Kenya and beyond..
       </p>

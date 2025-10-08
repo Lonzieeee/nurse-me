@@ -1,6 +1,7 @@
 import About from "../components/About/About";
 import Story from "../components/Story/Story";
 import Mission from "../components/Mission/Mission";
+import KenyaStats from "../components/KenyaStats/KenyaStats";
 import Team from "../components/Team/Team";
 import Impact from "../components/Impact/Impact";
 import SEO from "../components/SEO";
@@ -18,6 +19,7 @@ const AboutPage = () => {
       <About />
       <Story />
       <Mission />
+      <KenyaStats />
       <Team />
       <Impact />
     </div>
