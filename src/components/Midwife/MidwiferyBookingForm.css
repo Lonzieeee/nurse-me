@@ -1,6 +1,6 @@
 .midwife-booking-form-page {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e5f4fd 100%);
+  background: #ffffff;
   min-height: 100vh;
 }
 
@@ -254,7 +254,7 @@
 
 .midwife-form-submit {
   grid-column: 1 / -1;
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
   padding: 30px 20px;
 }
