@@ -11,6 +11,7 @@ function Navbar() {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [userDisplayName, setUserDisplayName] = useState("");
+  const [dropdownTimeout, setDropdownTimeout] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -45,6 +46,20 @@ function Navbar() {
     };
   }, [isUserMenuOpen]);
 
+ 
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeout) {
+        clearTimeout(dropdownTimeout);
+      }
+    };
+  }, [dropdownTimeout]);
+
+
+  useEffect(() => {
+    setIsServicesOpen(false);
+  }, [location.pathname]);
+
 
   const getUserInitials = (name) => {
     if (!name) return 'U';
@@ -55,12 +70,28 @@ function Navbar() {
     return name.charAt(0).toUpperCase();
   };
 
+  const handleMouseEnterServices = () => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeaveServices = () => {
+    const timeout = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 150); 
+    setDropdownTimeout(timeout);
+  };
+
 
   const handleLogout = async () => {
     try {
       await signOut(auth);
       navigate("/");
       setIsOpen(false);
+      setIsServicesOpen(false);
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -84,7 +115,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         
-        <Link to={user ? "/home" : "/"} className="nav-logo" onClick={() => setIsOpen(false)}>
+        <Link to={user ? "/home" : "/"} className="nav-logo" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
           <img
             src="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/icon-min.png"
             alt="Nurse Me Logo"
@@ -105,7 +136,7 @@ function Navbar() {
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
           
           <li className="nav-close-row">
-            <Link to={user ? "/home" : "/"} className="nav-logo drawer" onClick={() => setIsOpen(false)}>
+            <Link to={user ? "/home" : "/"} className="nav-logo drawer" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
               <img
                 src="https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/icon-min.png"
                 alt="Nurse Me Logo"
@@ -122,12 +153,12 @@ function Navbar() {
           </li>
           {user && (
             <>
-              <li><Link to="/home" className={`nav-link ${isActive("/home") ? "active" : ""}`} onClick={() => setIsOpen(false)}>Home</Link></li>
-              <li className={`dropdown ${isServicesOpen ? "open" : ""}`} 
-                  onMouseEnter={() => setIsServicesOpen(true)} 
-                  onMouseLeave={() => setIsServicesOpen(false)}>
+              <li><Link to="/home" className={`nav-link ${isActive("/home") ? "active" : ""}`} onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>Home</Link></li>
+              <li className={`dropdown ${isServicesOpen ? "open" : ""}`}
+                  onMouseEnter={handleMouseEnterServices} 
+                  onMouseLeave={handleMouseLeaveServices}>
                 <button
-                  className={`nav-link dropdown-toggle ${isActive("/services") || isActive("/home-nursing") || isActive("/midwife") || isActive("/doctor-house-calls") || isActive("/physiotherapy") || isActive("/medication-delivery") || isActive("/palliative-care") ? "active" : ""}`}
+                  className={`nav-link dropdown-toggle ${isActive("/home-nursing") || isActive("/midwife-services") || isActive("/doctor-house-calls") || isActive("/physiotherapy") || isActive("/medication-delivery") || isActive("/palliative-care") ? "active" : ""}`}
                   aria-haspopup="true"
                   aria-expanded={isServicesOpen}
                   onClick={(e) => {
@@ -150,7 +181,7 @@ function Navbar() {
                     </Link>
                   </li>
                   <li role="none">
-                    <Link role="menuitem" to="/midwife" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
+                    <Link role="menuitem" to="/midwife-services" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
                       Midwife Services
                     </Link>
                   </li>
@@ -176,10 +207,10 @@ function Navbar() {
                   </li>
                 </ul>
               </li>
-              <li><Link to="/services/book" className={`nav-link ${isActive("/services/book") ? "active" : ""}`} onClick={() => setIsOpen(false)}>Book a Visit</Link></li>
-              <li><Link to="/services/join" className={`nav-link ${isActive("/services/join") ? "active" : ""}`} onClick={() => setIsOpen(false)}>Join as Caregiver</Link></li>
-              <li><Link to="/about" className={`nav-link ${isActive("/about") ? "active" : ""}`} onClick={() => setIsOpen(false)}>About</Link></li>
-              <li><Link to="/contact" className={`nav-link ${isActive("/contact") ? "active" : ""}`} onClick={() => setIsOpen(false)}>Contact</Link></li>
+              <li><Link to="/services/book" className={`nav-link ${isActive("/services/book") ? "active" : ""}`} onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>Book a Visit</Link></li>
+              <li><Link to="/services/join" className={`nav-link ${isActive("/services/join") ? "active" : ""}`} onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>Join as Caregiver</Link></li>
+              <li><Link to="/about" className={`nav-link ${isActive("/about") ? "active" : ""}`} onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>About</Link></li>
+              <li><Link to="/contact" className={`nav-link ${isActive("/contact") ? "active" : ""}`} onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>Contact</Link></li>
             </>
           )}
           <li className="nav-cta">
@@ -213,7 +244,7 @@ function Navbar() {
                 </div>
               </div>
             ) : (
-              <Link to="/signin" className="nav-btn" onClick={() => setIsOpen(false)}>
+              <Link to="/signin" className="nav-btn" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
                 Sign Up
               </Link>
             )}
