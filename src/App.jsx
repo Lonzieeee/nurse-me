@@ -19,6 +19,7 @@ import MedicationDelivery from "./pages/MedicationDelivery";
 import PalliativeCare from "./pages/PalliativeCare";
 import Physiotherapy from "./pages/Physiotherapy";
 import Midwife from "./pages/Midwife";
+import Therapists from "./pages/Therapists";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/palliative-care" element={<PalliativeCare />} />
         <Route path="/physiotherapy" element={<Physiotherapy />} />
         <Route path="/midwife-services" element={<Midwife />} />
+        <Route path="/therapist" element={<Therapists />} />
       </Routes>
       <Footer />
       <BackToTop />

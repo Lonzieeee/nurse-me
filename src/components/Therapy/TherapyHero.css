@@ -1,0 +1,172 @@
+.therapy-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 400px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/therapyhero-min.png")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.therapy-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.therapy-hero-content {
+  text-align: left;
+  color: #fff;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: therapyFadeInUp 0.8s ease-out;
+}
+
+.therapy-breadcrumb {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.therapy-breadcrumb-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.therapy-breadcrumb-link:hover {
+  color: #2d9cdb;
+}
+
+.therapy-breadcrumb-services {
+  color: #e2e8f0;
+  pointer-events: none;
+  cursor: default;
+}
+
+.therapy-breadcrumb-current {
+  color: #2d9cdb;
+  font-weight: 500;
+}
+
+.therapy-breadcrumb-separator {
+  color: #94a3b8;
+  margin: 0 8px;
+}
+
+.therapy-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #fff !important;
+}
+
+.therapy-hero-title .therapy-highlight-blue {
+  color: #2d9cdb !important;
+}
+
+.therapy-hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #e2e8f0;
+  max-width: 600px;
+}
+
+.therapy-hero-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.therapy-cta-btn {
+  display: inline-block;
+  background-color: #2d9cdb;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.therapy-cta-btn:hover {
+  background-color: #1e7bb8;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.therapy-cta-btn:active {
+  transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  .therapy-hero {
+    height: 50vh;
+    min-height: 350px;
+    margin-top: 60px;
+  }
+  
+  .therapy-hero-content {
+    padding: 0 15px;
+  }
+  
+  .therapy-hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .therapy-hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+  
+  .therapy-cta-btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+  
+  .therapy-breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .therapy-hero {
+    height: 45vh;
+    min-height: 320px;
+  }
+  
+  .therapy-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .therapy-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .therapy-cta-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes therapyFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

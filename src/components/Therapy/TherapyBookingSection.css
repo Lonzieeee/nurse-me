@@ -1,0 +1,374 @@
+.therapy-booking-section {
+  padding: 80px 20px;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.therapy-booking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.therapy-booking-header {
+  background: transparent;
+  color: #374151;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.therapy-booking-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.therapy-highlight-blue {
+  color: #2d9cdb;
+}
+
+.therapy-booking-header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.therapy-booking-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.therapy-form-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(45, 156, 219, 0.08);
+  border: 1px solid rgba(45, 156, 219, 0.1);
+  transition: all 0.3s ease;
+}
+
+.therapy-form-section:hover {
+  box-shadow: 0 12px 35px rgba(45, 156, 219, 0.12);
+  transform: translateY(-2px);
+}
+
+.therapy-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(45, 156, 219, 0.1);
+}
+
+.therapy-section-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.therapy-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.therapy-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.therapy-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.therapy-form-group label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.therapy-form-group input,
+.therapy-form-group select,
+.therapy-form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.therapy-form-group input:focus,
+.therapy-form-group select:focus,
+.therapy-form-group textarea:focus {
+  outline: none;
+  border-color: #2d9cdb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.1);
+}
+
+.therapy-form-group input.error,
+.therapy-form-group select.error,
+.therapy-form-group textarea.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.therapy-error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.therapy-checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.therapy-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.therapy-checkbox-item:hover {
+  border-color: #2d9cdb;
+  background: #f3f4f6;
+}
+
+.therapy-checkbox-item input[type="checkbox"] {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: #2d9cdb;
+}
+
+.therapy-checkbox-item input[type="checkbox"]:checked + label {
+  color: #2d9cdb;
+  font-weight: 500;
+}
+
+.therapy-checkbox-item label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.therapy-note-privacy {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.therapy-form-submit {
+  grid-column: 1 / -1;
+  text-align: left;
+  background: transparent;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.therapy-submit-btn {
+  background: #2d9cdb;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.therapy-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: grey;
+}
+
+.therapy-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.therapy-submit-note {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0 0 8px 0;
+  opacity: 0.9;
+}
+
+.therapy-submit-assurance {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+
+@media (max-width: 1024px) {
+  .therapy-booking-form {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .therapy-booking-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 834px) {
+  .therapy-booking-section {
+    padding: 60px 15px;
+  }
+
+  .therapy-form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .therapy-checkbox-group {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .therapy-booking-header h2 {
+    font-size: 2rem;
+  }
+
+  .therapy-booking-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .therapy-booking-section {
+    padding: 50px 10px;
+  }
+
+  .therapy-booking-header {
+    padding: 30px 20px;
+  }
+
+  .therapy-form-section {
+    padding: 24px;
+  }
+
+  .therapy-booking-form {
+    padding: 0 10px;
+  }
+
+  .therapy-submit-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+
+  .therapy-form-submit {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .therapy-booking-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .therapy-booking-header p {
+    font-size: 0.95rem;
+  }
+
+  .therapy-form-section {
+    padding: 20px;
+  }
+
+  .therapy-section-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .therapy-form-group input,
+  .therapy-form-group select,
+  .therapy-form-group textarea {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .therapy-checkbox-item {
+    padding: 8px;
+  }
+
+  .therapy-checkbox-item label {
+    font-size: 0.85rem;
+  }
+
+  .therapy-submit-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  .therapy-form-submit {
+    padding: 25px 15px;
+  }
+}
+
+
+.therapy-form-section {
+  animation: therapy-fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.therapy-form-section:nth-child(1) { animation-delay: 0.1s; }
+.therapy-form-section:nth-child(2) { animation-delay: 0.2s; }
+.therapy-form-section:nth-child(3) { animation-delay: 0.3s; }
+.therapy-form-section:nth-child(4) { animation-delay: 0.4s; }
+.therapy-form-section:nth-child(5) { animation-delay: 0.5s; }
+.therapy-form-section:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes therapy-fade-in-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.therapy-form-group input:focus,
+.therapy-form-group select:focus,
+.therapy-form-group textarea:focus {
+  outline: 1px solid #2d9cdb;
+  outline-offset: 1px;
+}
+
+.therapy-checkbox-item input[type="checkbox"]:focus {
+  outline: 2px solid #2d9cdb;
+  outline-offset: 2px;
+}
+
+
+.therapy-submit-btn:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+}

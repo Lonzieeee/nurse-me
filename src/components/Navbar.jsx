@@ -158,7 +158,7 @@ function Navbar() {
                   onMouseEnter={handleMouseEnterServices} 
                   onMouseLeave={handleMouseLeaveServices}>
                 <button
-                  className={`nav-link dropdown-toggle ${isActive("/home-nursing") || isActive("/midwife-services") || isActive("/doctor-house-calls") || isActive("/physiotherapy") || isActive("/medication-delivery") || isActive("/palliative-care") ? "active" : ""}`}
+                  className={`nav-link dropdown-toggle ${isActive("/home-nursing") || isActive("/midwife-services") || isActive("/doctor-house-calls") || isActive("/physiotherapy") || isActive("/medication-delivery") || isActive("/palliative-care") || isActive("/therapist") ? "active" : ""}`}
                   aria-haspopup="true"
                   aria-expanded={isServicesOpen}
                   onClick={(e) => {
@@ -177,12 +177,12 @@ function Navbar() {
                 <ul className="dropdown-menu" role="menu">
                   <li role="none">
                     <Link role="menuitem" to="/home-nursing" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
-                      Home Nursing Care
+                      Home Nursing Care 
                     </Link>
                   </li>
                   <li role="none">
                     <Link role="menuitem" to="/midwife-services" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
-                      Midwife Services
+                      Midwifery Services
                     </Link>
                   </li>
                   <li role="none">
@@ -203,6 +203,11 @@ function Navbar() {
                   <li role="none">
                     <Link role="menuitem" to="/palliative-care" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
                       Palliative Care
+                    </Link>
+                  </li>
+                  <li role="none">
+                    <Link role="menuitem" to="/therapist" className="dropdown-item" onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}>
+                      Therapist Services
                     </Link>
                   </li>
                 </ul>

@@ -1,0 +1,382 @@
+.therapy-faq-section {
+  padding: 80px 20px;
+  background: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.therapy-faq-section::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: url("https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/faq.png") center/contain no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.therapy-faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.therapy-faq-header {
+  background: transparent;
+  color: #374151;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.therapy-faq-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.therapy-faq-highlight {
+  color: #2d9cdb;
+}
+
+.therapy-faq-header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.therapy-faq-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.therapy-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.therapy-faq-item {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(45, 156, 219, 0.02);
+  border: 1px solid rgba(45, 156, 219, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.therapy-faq-item:hover {
+  box-shadow: 0 12px 35px rgba(45, 156, 219, 0.08);
+  transform: translateY(-2px);
+}
+
+.therapy-faq-item.active {
+  border-color: #2d9cdb;
+  box-shadow: 0 12px 35px rgba(45, 156, 219, 0.05);
+}
+
+.therapy-faq-question {
+  width: 100%;
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.therapy-faq-question:hover {
+  background: #f8fafc;
+}
+
+.therapy-faq-item.active .therapy-faq-question {
+  background: #f0f8ff;
+  border-bottom: 1px solid rgba(45, 156, 219, 0.1);
+}
+
+.therapy-question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.therapy-faq-icon {
+  color: #2d9cdb;
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform 0.3s ease;
+}
+
+.therapy-faq-item.active .therapy-faq-icon {
+  transform: rotate(180deg);
+}
+
+.therapy-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.therapy-faq-answer.open {
+  max-height: 300px;
+}
+
+.therapy-answer-content {
+  padding: 16px 24px 24px 24px;
+}
+
+.therapy-answer-content p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.therapy-faq-contact {
+  display: flex;
+  align-items: flex-start;
+}
+
+.therapy-contact-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(45, 156, 219, 0.02);
+  border: 1px solid rgba(45, 156, 219, 0.1);
+  transition: all 0.3s ease;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.therapy-contact-card:hover {
+  box-shadow: 0 12px 35px rgba(45, 156, 219, 0.05);
+  transform: translateY(-2px);
+}
+
+.therapy-contact-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 16px 0;
+}
+
+.therapy-contact-card p {
+  color: #64748b;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0 0 24px 0;
+}
+
+.therapy-contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.therapy-contact-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.therapy-contact-btn.primary {
+  background: #2d9cdb;
+  color: #fff;
+}
+
+.therapy-contact-btn.primary:hover {
+  background: #1e7bb8;
+  transform: translateY(-1px);
+
+}
+
+.therapy-contact-btn.secondary {
+  background: transparent;
+  color: #2d9cdb;
+  border: 2px solid #2d9cdb;
+}
+
+.therapy-contact-btn.secondary:hover {
+  background: #2d9cdb;
+  color: #fff;
+  transform: translateY(-1px);
+
+}
+
+
+@media (max-width: 1024px) {
+  .therapy-faq-section::after {
+    left: 20px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.7;
+  }
+
+  .therapy-faq-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .therapy-contact-card {
+    position: static;
+  }
+
+  .therapy-faq-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 834px) {
+  .therapy-faq-section {
+    padding: 60px 15px;
+  }
+
+  .therapy-faq-header h2 {
+    font-size: 2rem;
+  }
+
+  .therapy-faq-header p {
+    font-size: 1rem;
+  }
+
+  .therapy-faq-question {
+    padding: 20px 24px;
+  }
+
+  .therapy-question-text {
+    font-size: 1rem;
+  }
+
+  .therapy-answer-content {
+    padding: 0 24px 20px 24px;
+  }
+
+  .therapy-contact-card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .therapy-faq-section::after {
+    left: 10px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.5;
+  }
+
+  .therapy-faq-section {
+    padding: 50px 10px;
+  }
+
+  .therapy-faq-header {
+    padding: 30px 20px;
+  }
+
+  .therapy-faq-content {
+    padding: 0 10px;
+  }
+
+  .therapy-faq-item {
+    margin: 0 5px;
+  }
+
+  .therapy-contact-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .therapy-faq-section::after {
+    display: none;
+  }
+
+  .therapy-faq-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .therapy-faq-header p {
+    font-size: 0.95rem;
+  }
+
+  .therapy-faq-question {
+    padding: 16px 20px;
+  }
+
+  .therapy-question-text {
+    font-size: 0.95rem;
+  }
+
+  .therapy-answer-content {
+    padding: 0 20px 16px 20px;
+  }
+
+  .therapy-answer-content p {
+    font-size: 0.9rem;
+  }
+
+  .therapy-contact-card {
+    padding: 20px;
+  }
+
+  .therapy-contact-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .therapy-contact-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+
+.therapy-faq-item {
+  animation: therapy-faq-fade-in 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.therapy-faq-item:nth-child(1) { animation-delay: 0.1s; }
+.therapy-faq-item:nth-child(2) { animation-delay: 0.2s; }
+.therapy-faq-item:nth-child(3) { animation-delay: 0.3s; }
+.therapy-faq-item:nth-child(4) { animation-delay: 0.4s; }
+.therapy-faq-item:nth-child(5) { animation-delay: 0.5s; }
+.therapy-faq-item:nth-child(6) { animation-delay: 0.6s; }
+.therapy-faq-item:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes therapy-faq-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.therapy-faq-question:focus {
+  outline: 2px solid #2d9cdb;
+  outline-offset: 2px;
+}
+
+.therapy-contact-btn:focus {
+  outline: 2px solid #2d9cdb;
+  outline-offset: 2px;
+}

@@ -42,16 +42,28 @@ function Services() {
       link: "/medication-delivery"
     },
     { 
-      title: "Midwife Services", 
-      desc: "Professional midwifery care supporting expectant mothers throughout pregnancy, childbirth, and postpartum recovery in the comfort of your home.", 
+      title: "Midwifery", 
+      desc: "Professional midwifery care supporting expectant mothers throughout pregnancy, childbirth, and postpartum recovery..", 
       icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/midwife%20services.png",
       link: "/midwife-services"
     },
     { 
       title: "Palliative Care", 
-      desc: "Compassionate care focused on relieving pain, managing symptoms, and enhancing comfort for patients with serious illnesses, while supporting their families.", 
+      desc: "Compassionate care focused on relieving pain, managing symptoms, and enhancing comfort for patients with serious illnesses.", 
       icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/palliative-min.png",
       link: "/palliative-care"
+    },
+    { 
+      title: "Therapist", 
+      desc: "Professional mental health support and counseling services provided in the comfort and privacy of your home environment.", 
+      icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/talking.png",
+      link: "/therapist"
+    },
+    { 
+      title: "Nutrition", 
+      desc: "Expert nutritional guidance and personalized meal planning to support your health goals and dietary requirements at home.", 
+      icon: "https://pub-3e59c1e3c82c4ab1a2e92d94110f1b6c.r2.dev/dietitian.png",
+      link: "/nutrition"
     },
   ];
 

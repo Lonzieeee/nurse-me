@@ -103,14 +103,36 @@ const MidwifeKeyServices = () => {
           }
         });
       },
-      { threshold: 0.6 }
+      { 
+        threshold: window.innerWidth <= 768 ? 0.1 : 0.6,
+        rootMargin: '50px'
+      }
     );
+
+
+    const mobileTimeout = setTimeout(() => {
+      if (window.innerWidth <= 768) {
+        const cards = containerRef.current?.querySelectorAll('.midwife-benefit-card');
+        if (cards) {
+          cards.forEach((card, cardIndex) => {
+            if (!card.classList.contains('in-view')) {
+              setTimeout(() => {
+                card.classList.add('in-view');
+              }, cardIndex * 150);
+            }
+          });
+        }
+      }
+    }, 1000);
 
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      clearTimeout(mobileTimeout);
+    };
   }, []);
 
   return (
