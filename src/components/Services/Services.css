@@ -194,6 +194,27 @@
       }
   }
 
+
+  @media screen and (min-width: 1201px) and (max-width: 1366px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .services-grid > .service-card {
+      min-height: 260px;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .services-grid > .service-card:nth-child(3n+1) {
+      border-top-left-radius: 24px;
+      border-bottom-left-radius: 24px;
+    }
+    .services-grid > .service-card:nth-child(3n) {
+      border-top-right-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+  }
+
   @media screen and (min-width: 993px) and (max-width: 1200px) {
     .services-grid 
     {

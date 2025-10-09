@@ -175,6 +175,36 @@
   margin: 0;
 }
 
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .therapy-why-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px;
+  }
+  
+  .therapy-why-card {
+    max-width: 280px;
+    margin: 0 auto;
+    min-height: 240px;
+  }
+  
+  .therapy-why-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .therapy-why-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .therapy-why-card-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
 @media (max-width: 1024px) {
   .why-our-therapists-grid {
     grid-template-columns: repeat(3, 1fr);

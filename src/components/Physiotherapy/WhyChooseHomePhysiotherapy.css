@@ -148,6 +148,36 @@
 }
 
 
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .physio-why-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px;
+  }
+  
+  .physio-why-card {
+    max-width: 280px;
+    margin: 0 auto;
+    min-height: 240px;
+  }
+  
+  .physio-why-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .physio-why-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .physio-why-card-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
 @media (max-width: 1024px) {
   .why-choose-physio-grid {
     grid-template-columns: repeat(3, 1fr);

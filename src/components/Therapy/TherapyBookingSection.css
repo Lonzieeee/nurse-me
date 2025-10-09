@@ -229,6 +229,38 @@
 }
 
 
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .therapy-booking-container {
+    max-width: 1000px;
+    padding: 30px 25px;
+  }
+  
+  .therapy-booking-header h2 {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .therapy-booking-header p {
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+  }
+  
+  .therapy-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .therapy-section-header h3 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+  
+  .therapy-submit-btn {
+    padding: 14px 35px;
+    font-size: 1.05rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .therapy-booking-form {
     grid-template-columns: 1fr;

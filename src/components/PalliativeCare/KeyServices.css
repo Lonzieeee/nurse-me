@@ -128,6 +128,36 @@
   font-weight: 700;
 }
 
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .palliative-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px;
+  }
+  
+  .palliative-service-card {
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+  
+  .palliative-service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .palliative-service-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .palliative-service-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 1024px) {
   .palliative-service-desc {
     padding: 70px 20px;

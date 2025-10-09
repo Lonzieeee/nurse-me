@@ -185,7 +185,39 @@
   font-style: italic;
 }
 
-/* Responsive Design */
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .physio-booking-container {
+    max-width: 1000px;
+    padding: 30px 25px;
+  }
+  
+  .physio-booking-header h2 {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .physio-booking-header p {
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+  }
+  
+  .physio-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .physio-section-header h3 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+  
+  .physio-submit-btn {
+    padding: 14px 35px;
+    font-size: 1.05rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .physio-booking-form {
     grid-template-columns: 1fr;

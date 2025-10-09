@@ -154,6 +154,42 @@
 }
 
 
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .team-rows {
+    max-width: 1000px;
+  }
+  
+  .team-row {
+    gap: 30px;
+  }
+  
+  .team-card-horizontal {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .avatar-wrap img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .team-name {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  
+  .team-role {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .team-bio {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 1200px) {
     .team-rows {
         max-width: 920px;

@@ -281,6 +281,43 @@
 
 
 
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .providers-section {
+    padding: 70px 20px;
+  }
+  
+  .providers-title {
+    font-size: 2.3rem;
+  }
+  
+  .providers-path.desktop {
+    gap: 50px 100px;
+    max-width: 800px;
+  }
+  
+  .step-circle {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .step-icon {
+    font-size: 1.6rem;
+  }
+  
+  .step-tooltip {
+    width: 250px;
+    bottom: 115px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  .provider-image {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+
 @media (max-width: 1024px) and (min-width: 769px) {
   .providers-section {
     padding: 60px 15px;

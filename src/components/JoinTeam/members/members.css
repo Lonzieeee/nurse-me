@@ -102,6 +102,26 @@
     color: #111;
   }
   
+
+  @media (min-width: 1201px) and (max-width: 1366px) {
+    .members-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .member-card {
+      max-width: 280px;
+      margin: 0 auto;
+      padding: 14px;
+    }
+    
+    .member-card h3 {
+      font-size: 1.1rem;
+    }
+  }
+
   @media (max-width: 900px) {
     .members-grid {
       grid-template-columns: repeat(2, 1fr);

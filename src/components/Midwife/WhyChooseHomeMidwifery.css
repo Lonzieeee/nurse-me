@@ -186,6 +186,36 @@
 }
 
 
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .midwife-why-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px;
+  }
+  
+  .midwife-why-card {
+    max-width: 280px;
+    margin: 0 auto;
+    min-height: 240px;
+  }
+  
+  .midwife-why-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .midwife-why-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .midwife-why-card-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
 @media (max-width: 1024px) {
   .why-choose-midwifery-grid {
     grid-template-columns: repeat(2, 1fr);

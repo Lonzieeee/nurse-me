@@ -139,6 +139,51 @@
 }
 
 
+
+@media (max-width: 1200px) {
+  .therapist-benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .therapist-benefit-card {
+    max-width: 260px;
+    min-height: 240px;
+    padding: 25px 18px;
+  }
+  
+  .therapist-benefit-title {
+    font-size: 1.15rem;
+  }
+  
+  .therapist-benefit-description {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 1366px) {
+  .therapist-benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .therapist-benefit-card {
+    max-width: 280px;
+    min-height: 250px;
+    padding: 30px 20px;
+  }
+  
+  .therapist-service-desc-title {
+    font-size: 2.3rem;
+  }
+}
+
+
 @media (max-width: 1024px) {
   .therapist-benefits-grid {
     grid-template-columns: repeat(3, 1fr);

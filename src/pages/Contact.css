@@ -180,6 +180,37 @@
     }
 
 
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .contact-details {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .detail {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .detail .icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+  }
+  
+  .detail .info h4 {
+    font-size: 13px;
+  }
+  
+  .detail .info p {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 1024px) {
   .contact-wrapper {
     margin-right: 5%;

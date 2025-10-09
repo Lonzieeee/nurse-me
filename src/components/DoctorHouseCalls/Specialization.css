@@ -133,6 +133,32 @@
 }
 
 
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .specialization-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 850px;
+  }
+  
+  .specialization-card {
+    padding: 14px;
+    min-height: 120px;
+  }
+  
+  .specialization-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+  }
+  
+  .specialization-name {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+}
+
 @media (max-width: 768px) {
   .specialization {
     padding: 60px 16px;
