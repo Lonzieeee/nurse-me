@@ -1,72 +1,82 @@
-.physio-booking-form-section {
-  padding: 96px 20px;
-  background: #f1f5f9;
+.physio-booking-section {
+  padding: 80px 20px;
+  background: #ffffff;
   min-height: 100vh;
 }
 
-.physio-booking-form-container {
-  width: 100%;
-  max-width: 1040px;
+.physio-booking-container {
+  max-width: 1200px;
   margin: 0 auto;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.physio-booking-form-title {
+.physio-booking-header {
+  background: transparent;
+  color: #374151;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.physio-booking-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2d9cdb;
-  text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 12px;
   line-height: 1.2;
 }
 
+.physio-highlight-blue {
+  color: #2d9cdb;
+}
+
+.physio-booking-header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  color: #64748b;
+}
+
 .physio-booking-form {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.physio-form-row.two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.physio-form-row.three-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 0 20px;
 }
 
 .physio-form-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(45, 156, 219, 0.08);
+  border: 1px solid rgba(45, 156, 219, 0.1);
+  transition: all 0.3s ease;
+}
+
+.physio-form-section:hover {
+  box-shadow: 0 12px 35px rgba(45, 156, 219, 0.12);
+  transform: translateY(-2px);
+}
+
+.physio-section-header {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(45, 156, 219, 0.1);
 }
 
-.physio-form-section.physio-span-2 {
-  grid-column: 1 / -1;
-}
-
-.physio-form-section-title {
+.physio-section-header h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #2d9cdb;
-  margin-bottom: 4px;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 8px;
+  color: #374151;
+  margin: 0;
 }
 
-.physio-section-description {
-  font-size: 0.95rem;
-  color: #64748b;
-  margin-bottom: 16px;
-  font-style: italic;
+.physio-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .physio-form-group {
@@ -75,237 +85,229 @@
   gap: 8px;
 }
 
-.physio-form-group label {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #334155;
+.physio-form-group.full-width {
+  grid-column: 1 / -1;
 }
 
-.physio-required-mark {
-  color: #ef4444;
-  margin-left: 2px;
+.physio-form-group label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.95rem;
 }
 
 .physio-form-group input,
 .physio-form-group select,
 .physio-form-group textarea {
-  padding: 14px 16px;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  background: #ffffff;
+  background: #fafafa;
 }
 
 .physio-form-group input:focus,
 .physio-form-group select:focus,
 .physio-form-group textarea:focus {
+  outline: none;
   border-color: #2d9cdb;
+  background: #fff;
   box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.1);
 }
 
-.physio-form-group input::placeholder,
-.physio-form-group textarea::placeholder {
-  color: #94a3b8;
+.physio-form-group input.error,
+.physio-form-group select.error,
+.physio-form-group textarea.error {
+  border-color: #ef4444;
+  background: #fef2f2;
 }
 
-.physio-form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-  line-height: 1.6;
+.physio-error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 4px;
 }
 
-
-.physio-checkbox-group {
-  margin: 24px 0;
+.physio-note-privacy {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 8px;
+  font-style: italic;
 }
 
-.physio-checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1.5;
+.physio-form-submit {
+  grid-column: 1 / -1;
+  text-align: left;
+  background: transparent;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 20px;
 }
-
-.physio-checkbox-label input[type="checkbox"] {
-  display: none;
-}
-
-.physio-checkmark {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #e2e8f0;
-  border-radius: 4px;
-  position: relative;
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: all 0.3s ease;
-}
-
-.physio-checkbox-label input[type="checkbox"]:checked + .physio-checkmark {
-  background: #2d9cdb;
-  border-color: #2d9cdb;
-}
-
-.physio-checkbox-label input[type="checkbox"]:checked + .physio-checkmark::after {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 6px;
-  height: 10px;
-  border: 2px solid white;
-  border-top: none;
-  border-left: none;
-  transform: rotate(45deg);
-}
-
 
 .physio-submit-btn {
   background: #2d9cdb;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 16px 32px;
+  padding: 16px 40px;
+  border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 16px;
-  align-self: flex-start;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .physio-submit-btn:hover:not(:disabled) {
-  background: #1e7bb8;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(45, 156, 219, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: #1e7bb8;
 }
 
 .physio-submit-btn:disabled {
-  background: #94a3b8;
+  opacity: 0.7;
   cursor: not-allowed;
   transform: none;
-  box-shadow: none;
 }
 
+.physio-submit-note {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0 0 8px 0;
+  opacity: 0.9;
+}
 
+.physio-submit-assurance {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
-  .physio-booking-form-container {
-    padding: 32px;
-  }
-  
-  .physio-form-row.three-col {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .physio-booking-form-section {
-    padding: 60px 16px;
-  }
-  
-  .physio-booking-form-container {
-    padding: 24px;
-  }
-  
-  .physio-booking-form-title {
-    font-size: 2rem;
-    margin-bottom: 32px;
-  }
-  
-  .physio-form-row.two-col,
-  .physio-form-row.three-col {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  .physio-form-section-title {
-    font-size: 1.2rem;
-  }
-  
   .physio-booking-form {
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .physio-booking-header h2 {
+    font-size: 2.2rem;
   }
 }
 
-@media (max-width: 480px) {
-  .physio-booking-form-section {
-    padding: 40px 12px;
+@media (max-width: 834px) {
+  .physio-booking-section {
+    padding: 60px 15px;
   }
-  
-  .physio-booking-form-container {
-    padding: 20px;
+
+  .physio-form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  
-  .physio-booking-form-title {
-    font-size: 1.8rem;
-    margin-bottom: 24px;
+
+  .physio-booking-header h2 {
+    font-size: 2rem;
   }
-  
-  .physio-form-group input,
-  .physio-form-group select,
-  .physio-form-group textarea {
-    padding: 12px 14px;
-    font-size: 0.95rem;
-  }
-  
-  .physio-submit-btn {
-    width: 100%;
-    padding: 14px 24px;
+
+  .physio-booking-header p {
     font-size: 1rem;
   }
 }
 
-.physio-submit-btn.loading {
-  position: relative;
-  color: transparent;
-}
+@media (max-width: 768px) {
+  .physio-booking-section {
+    padding: 50px 10px;
+  }
 
-.physio-submit-btn.loading::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  margin: -10px 0 0 -10px;
-  border: 2px solid #ffffff;
-  border-top: 2px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
+  .physio-booking-header {
+    padding: 30px 20px;
+  }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+  .physio-form-section {
+    padding: 24px;
+  }
 
+  .physio-booking-form {
+    padding: 0 10px;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  .physio-form-group input,
-  .physio-form-group select,
-  .physio-form-group textarea,
-  .physio-submit-btn,
-  .physio-checkmark {
-    transition: none;
+  .physio-submit-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+
+  .physio-form-submit {
+    padding: 30px 20px;
   }
 }
 
+@media (max-width: 480px) {
+  .physio-booking-header h2 {
+    font-size: 1.8rem;
+  }
 
-@media (prefers-contrast: high) {
+  .physio-booking-header p {
+    font-size: 0.95rem;
+  }
+
+  .physio-form-section {
+    padding: 20px;
+  }
+
+  .physio-section-header h3 {
+    font-size: 1.2rem;
+  }
+
   .physio-form-group input,
   .physio-form-group select,
   .physio-form-group textarea {
-    border: 3px solid #000;
+    padding: 10px 14px;
+    font-size: 0.9rem;
   }
-  
-  .physio-form-group input:focus,
-  .physio-form-group select:focus,
-  .physio-form-group textarea:focus {
-    border-color: #000;
-    box-shadow: none;
+
+  .physio-submit-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
   }
+
+  .physio-form-submit {
+    padding: 25px 15px;
+  }
+}
+
+/* Animation for form sections */
+.physio-form-section {
+  animation: physio-fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.physio-form-section:nth-child(1) { animation-delay: 0.1s; }
+.physio-form-section:nth-child(2) { animation-delay: 0.2s; }
+.physio-form-section:nth-child(3) { animation-delay: 0.3s; }
+.physio-form-section:nth-child(4) { animation-delay: 0.4s; }
+.physio-form-section:nth-child(5) { animation-delay: 0.5s; }
+.physio-form-section:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes physio-fade-in-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus indicators for accessibility */
+.physio-form-group input:focus,
+.physio-form-group select:focus,
+.physio-form-group textarea:focus {
+  outline: 2px solid #2d9cdb;
+  outline-offset: 2px;
+}
+
+/* Loading state */
+.physio-submit-btn:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
 }
